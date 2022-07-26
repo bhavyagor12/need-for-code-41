@@ -32,6 +32,13 @@ const UserSchema = new mongoose.Schema(
     typeofuser:{
       type: "string",
       required: true,
+    },
+    teams:{
+      type: ["string"],
+      default: []
+    },
+    studentid:{
+      type: "string",
     }
   },
   {
