@@ -63,6 +63,18 @@ function Login() {
       [e.target.name]:e.target.value})
   }
  
+  
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    dispatch(loginStart());
+    try {
+      const res = await axios.post("auth/signin", {values});
+      dispatch(loginSuccess(res.data));
+    } catch (err) {
+      dispatch(loginFailure());
+    }
+    
+  };
   console.log(values);
 
   return (
