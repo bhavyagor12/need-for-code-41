@@ -2,6 +2,7 @@ import { createError } from "../error.js";
 import jwt from "jsonwebtoken";
 import Teams from "../models/Teams.js";
 import User from "../models/Users.js";
+import AssignmentStudent from "../models/AssignmentStudent.js";
 
 
 export const addTeams = async (req, res, next) => {
@@ -42,21 +43,23 @@ export const addAssignments = async (req, res, next) => {
 };
 
 //send pending assignments to students
-export const sendAssignments = async (req, res, next) => {
+export const sendAssignments= async (req, res, next) => {
     try {
         const team = await Teams.findOne({ teamname: req.name });
         if (!team) return next(createError(404, "Team not found!"));
+        var arr1 = [];
         team.assignments.forEach(async (assignment) => {
-          if(assignment.sent===0)
+          if(!assignment.sent)
           {
             team.students.forEach(async(element) =>{
-              const newAssignmentStudent = new AssignmentStudent({ ...req.body, studentid: element, teamid: team._id, assignmentid: team.assignmentid ,submitted: 0 });
-              await newAssignmentStudent.save();
+              arr1.push({studentid: element, teamid: team._id, assignmentid: assignment._id.toString() ,submitted: 0 });
             })
-            assignment.sent=1;
-            await team.save();
+            assignment.sent=true;
           }
         })
+        await team.save();
+        await AssignmentStudent.insertMany(arr1);
+
         res.status(200).send("Assignments sent to users");
     } catch (err) {
         next(createError(404, "Error!"));
