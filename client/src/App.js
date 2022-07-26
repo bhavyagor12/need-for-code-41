@@ -34,6 +34,7 @@ import Profile from "./parent/pages/Profile";
 import Signin from "./login/pages/Signin";
 import StudentTable from "./student/pages/StudentTable";
 // import StudentTable from "./student/pages/StudentTable";
+import Papaparsing from "./Papaparsing";
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
       <Route path="/student/table" element={<StudentTable/>} />
       <Route path="/parent/profile" element={<Profile/>} />
       <Route path="/parent/raisequery" element={<RaiseQuery/>} />
+      <Route path="/papaparsing" element={<Papaparsing/>} />
 
       <Route path="/login" element={<Login/>} />
 
