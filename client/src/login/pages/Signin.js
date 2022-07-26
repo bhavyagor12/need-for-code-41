@@ -20,17 +20,18 @@ color: ${({theme}) => theme.text}
 
 `;
 const Wrapper = styled.div `
+background-color: white;
 display: flex;
 align-items: center;
 flex-direction:column;
 
-padding:20px 50px;
-border:1px solid ${({theme}) => theme.soft};
+padding:50px 70px;
+border:2px solid ${({theme}) => theme.soft};
 gap: 10px;
 `;
 
 const Title = styled.h1`
-font-size: 24px;
+font-size: 48px;
 `;
 
 const SubTitle = styled.h2`
@@ -42,10 +43,11 @@ const Input = styled.input`
 border:1px solid ${({theme}) => theme.soft};
 border-radius:3px;
 background-color: transparent;
-padding:10px;
+padding:15px;
 outline:none;
 color: ${({theme}) => theme.text}
 `;
+
 const Button = styled.button`
 border-radius: 3px;
 border:none;
@@ -55,19 +57,7 @@ cursor:pointer;
 background-color: ${({theme}) => theme.soft};
 color: ${({theme}) => theme.textSoft};
 `;
-const More = styled.div`
-display: flex;
-font-size: 10px;
-color: ${({theme}) => theme.textSoft};
-margin-top: 10px;
-`;
-const Link = styled.div`
-margin-left:50px;
 
-`;
-const Links = styled.span`
-display: flex;
-margin-left:30px;`;
 const Signin = () => {
   const navigate = useNavigate();
   const [sapid,setSapid] = useState("");
@@ -100,15 +90,20 @@ const Signin = () => {
 
 
   return (
-    <Container><Wrapper><Title>Signin</Title>
-    <SubTitle>To continue to YTUBE</SubTitle>
+    
+    <Container>
+    
+    <Wrapper><Title>Login</Title>
+    <SubTitle>WELCOME TO SterLearn </SubTitle>
     <Input placeholder="sapid" onChange={e => setSapid(e.target.value)} />
     <Input placeholder="email" onChange={e => setEmail(e.target.value)} />
     <Input type="password" placeholder="password" onChange={e => setPassword(e.target.value)} />
     <Button onClick={handleLogin}>Sign in</Button>
    
     </Wrapper>
+   
     </Container>
+    
   )
 }
 
