@@ -31,20 +31,21 @@ export const addStudents = async (req, res, next) => {
 
 export const addAssignments = async (req, res, next) => {
   try {
-    const team = await Teams.findOne({ teamname: req.name });
+    const team = await Teams.findOne({ teamname: req.body.name });
     if (!team) return next(createError(404, "Team not found!"));
-    team.assignments.push({...req.body, sent: 0});
+    console.log(team)
+    team.assignments.push({...req.body, sent: false});
     await team.save();
-    next()
     res.status(200).send("Assignment has been created");
   } catch (err) {
-    next(createError(404, "Team already exists!"));
+    next(createError(404, "Error!"));
   }
 };
 
 //send pending assignments to students
 export const sendAssignments= async (req, res, next) => {
     try {
+
         const team = await Teams.findOne({ teamname: req.name });
         if (!team) return next(createError(404, "Team not found!"));
         var arr1 = [];

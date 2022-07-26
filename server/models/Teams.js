@@ -29,7 +29,7 @@ const TeamsSchema = new mongoose.Schema(
           type: Date,
         },
         lastdate:{
-            type: Date,
+          type: Date,
         },
         totalmarks:{
           type: Number,

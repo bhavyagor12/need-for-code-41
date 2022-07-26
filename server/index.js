@@ -4,9 +4,12 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.js";
 import teamRoutes from "./routes/team.js";
+import evaluationRoutes from "./routes/evaluation.js";
 import  Cors  from "cors";
 const app = express();
 dotenv.config();
+
+
 
 const connect = () => {
   mongoose
@@ -19,9 +22,11 @@ const connect = () => {
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(Cors());
+app.use(Cors({origin: '*'}));
+
 app.use("/api/auth", authRoutes);
 app.use("/api/teams", teamRoutes);
+app.use("/api/evaluation", evaluationRoutes);
 
 // error middleware
 app.use((err, req, res, next) => {
@@ -34,6 +39,9 @@ app.use((err, req, res, next) => {
   });
 }); // error handling
 
+app.get("/", (req, res) => {
+  res.send("hello");
+})
 
 
 app.listen(8000, () => {
