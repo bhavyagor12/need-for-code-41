@@ -46,17 +46,17 @@ function Login() {
     },
   ]
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(loginStart());
-    try {
-      const res =  axios.post("http://localhost:8000/auth/signin",{values});
-      // dispatch(loginSuccess(res.data));
-      console.log(res.data);
-    } catch (err) {
-      dispatch(loginFailure());
-    }
-  }
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   dispatch(loginStart());
+  //   try {
+  //     const res =  axios.post("http://localhost:8000/auth/signin",{values});
+  //     // dispatch(loginSuccess(res.data));
+  //     console.log(res.data);
+  //   } catch (err) {
+  //     dispatch(loginFailure());
+  //   }
+  // }
 
   const onChange=(e)=>{
     setValues({...values,
@@ -79,7 +79,7 @@ function Login() {
 
   return (
     <div className='app'>
-      <form onSubmit={handleSubmit}>
+      <form>
         <h1>LOGIN</h1>
         {inputs.map((input)=>(
           <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange} />
