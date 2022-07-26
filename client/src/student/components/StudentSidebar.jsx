@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../../images/needforcode.png";
 import { VscColorMode } from 'react-icons/vsc'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { useDispatch } from 'react-redux';
@@ -70,9 +70,11 @@ gap: 3px;
 const StudentSidebar = ({ darkMode, setDarkMode }) => {
     const { user } = useSelector(state => state.user);
     const dispatch = new useDispatch();
-
+    const navigate = useNavigate();
     const logoutUser = async () => {
         dispatch(logout());
+        navigate("/signin");
+
         try {
             const res = await axios.get("auth/logout")
             console.log(res);

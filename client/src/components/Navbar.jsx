@@ -3,6 +3,7 @@ import { MdSearch } from "react-icons/md";
 import { RiAddBoxLine } from "react-icons/ri";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import { Link, useNavigate } from 'react-router-dom';
 import {
     NavbarContainer,
     LeftContainer,
@@ -14,7 +15,7 @@ import {
     Logo,
     OpenLinksButton,
     NavbarLinkExtended,
-} from "./Navbar.style";
+} from "../student/components/Navbar.style";
 // import LogoImg from "../assets/logo.png";
 const Search = styled.div`
   position: absolute;
@@ -52,7 +53,7 @@ background-color: #999;
 `;
 function Navbar() {
     const [extendNavbar, setExtendNavbar] = useState(false);
-    const {user} = useSelector(state => state.user);
+    const { user } = useSelector(state => state.user);
 
     return (
         <NavbarContainer extendNavbar={extendNavbar}>

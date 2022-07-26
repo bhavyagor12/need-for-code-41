@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components';
 import Sidebar from '../components/StudentSidebar'
 import { darkTheme, lightTheme } from "../../utils/Theme";
-import Navbar from '../components/Navbar';
+import Navbar from '../../components/Navbar';
 import StudentProfile from './StudentProfile';
 
 

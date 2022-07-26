@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import styled, { createGlobalStyle } from 'styled-components';
 import {useDispatch} from 'react-redux';
 import {loginFailure,loginSuccess,loginStart} from '../../redux/userSlice';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 
@@ -68,6 +69,7 @@ const Links = styled.span`
 display: flex;
 margin-left:30px;`;
 const Signin = () => {
+  const navigate = useNavigate();
   const [sapid,setSapid] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -83,10 +85,10 @@ const Signin = () => {
       dispatch(loginSuccess(res.data));
     //   if(res.typeofuser === "teacher"){}
       if(res.data.typeofuser === "student"){
-        window.location.href = "http://localhost:3001/student";
+       navigate('/student');
       }
-      if(res.data.typeofuser === "parent"){
-        window.location.href = "http://localhost:3001/parent";
+      if(res.data.typeofuser === "teacher"){
+        navigate('/parent');
       }
     } catch (err) {
       dispatch(loginFailure());

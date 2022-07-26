@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import Sidebar from "../components/Sidebar";
 import { darkTheme, lightTheme } from "../../utils/Theme";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Navbar from '../../components/Navbar';
 import Login from "../../login/pages/Login";
 // import "./Profile.css";
 import needforcode from "../../images/needforcode.png";
