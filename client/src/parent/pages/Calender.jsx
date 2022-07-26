@@ -18,23 +18,23 @@ const Wrapper = styled.div`
 `;
 
 const Parent = () => {
-  const [darkMode, setDarkMode] = useState(true);
-  return (
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <Container className="App">
+    const [darkMode, setDarkMode] = useState(true);
+    return (
+        <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+            <Container className="App">
 
-        <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Main>
-          <Navbar />
+                <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
+                <Main>
+                    <Navbar />
 
-          <Wrapper>
+                    <Wrapper>
 
-          </Wrapper>
-        </Main>
+                    </Wrapper>
+                </Main>
 
-      </Container>
-    </ThemeProvider >
-  )
+            </Container>
+        </ThemeProvider >
+    )
 }
 
 export default Parent
