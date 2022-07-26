@@ -4,10 +4,12 @@ import SmallCalendar from "./SmallCalendar";
 import Labels from "./Labels";
 export default function Sidebar() {
   return (
-    <aside className="border p-5 w-64">
+    <div className="flex flex-col">
+    <aside className="border p-2 w-30 flex flex-col">
       <CreateEventButton />
-      <SmallCalendar />
-      <Labels />
+      {/* <SmallCalendar />
+      <Labels /> */}
     </aside>
+    </div>
   );
 }

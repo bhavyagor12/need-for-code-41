@@ -15,11 +15,11 @@ function Calender() {
     }, [monthIndex]);
 
     return (
-        <div className="bg-white w-100vw  h-screen ">
+        <div className="bg-white w-11/12 max-h-screen  ">
             {showEventModal && <EventModal />}
             <div className="h-screen w-100vw  flex flex-col z-100">
                 <CalendarHeader />
-                <div className="flex flex-1">
+                <div className="flex flex-col">
                     <Sidebar />
                     <Month month={currenMonth} />
                 </div>

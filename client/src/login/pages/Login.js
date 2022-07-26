@@ -85,7 +85,7 @@ function Login() {
           <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange} />
         ))}
         
-        <button>Submit</button>
+        <button onClick={handleLogin}>Submit</button>
       </form>
     </div>
   );

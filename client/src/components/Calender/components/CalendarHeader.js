@@ -29,7 +29,7 @@ export default function CalendarHeader() {
       >
         Today
       </button>
-      <button onClick={handlePrevMonth}>
+      {/* <button onClick={handlePrevMonth}>
         <span className="material-icons-outlined cursor-pointer text-gray-600 mx-2">
           chevron_left
         </span>
@@ -38,7 +38,7 @@ export default function CalendarHeader() {
         <span className="material-icons-outlined cursor-pointer text-gray-600 mx-2">
           chevron_right
         </span>
-      </button>
+      </button> */}
       <h2 className="ml-4 text-xl text-gray-500 font-bold">
         {dayjs(new Date(dayjs().year(), monthIndex)).format(
           "MMMM YYYY"
