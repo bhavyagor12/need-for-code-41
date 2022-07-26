@@ -1,23 +1,27 @@
 import { useState } from 'react';
 import './Login.css';
 import FormInput from '../components/FormInput';
+import {useDispatch} from 'react-redux';
+import {loginFailure,loginSuccess,loginStart} from '../../redux/userSlice';
+import axios from 'axios';
+
 function Login() {
   const[values,setValues]=useState({
-    username:'',
-    email:'',
-    birthday:'',
-    password:'',
-    confirmPassword:''
+  sapid:'',
+   email : '',
+   password:'',
+
   })
+  const dispatch=useDispatch();
   const inputs=[
     {
       id:1,
-      name:'SAPID',
+      name:'sapid',
       type:'text',
-      placeholder:'SAPID',
-      errorMessage:"SAPID should be 10 digits and shouldn't include any other characters!",
-      label:'SAPID',
-      pattern: "^[0-9]{10}$",
+      placeholder:'sapid',
+      errorMessage:"sapid should be 10 digits and shouldn't include any other characters!",
+      label:'sapid',
+      // pattern: "^[0-9]{10}$",
       required:true,
     },
     {
@@ -36,7 +40,7 @@ function Login() {
       placeholder: "Password",
       errorMessage:"Password should be 10 characters and include at least 1 letter, 1 number and 1 special character!",
       label: "Password",
-      pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
+      // pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
       required: true,
     },
   ]
@@ -49,18 +53,29 @@ function Login() {
     setValues({...values,
       [e.target.name]:e.target.value})
   }
-
+  
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    dispatch(loginStart());
+    try {
+      const res = await axios.post("/auth/signin", {values});
+      dispatch(loginSuccess(res.data));
+    } catch (err) {
+      dispatch(loginFailure());
+    }
+    
+  };
   console.log(values);
 
   return (
     <div className='app'>
       <form onSubmit={handleSubmit}>
-        <h1 className='text-3xl my-2'>LOGIN</h1>
+        <h1>LOGIN</h1>
         {inputs.map((input)=>(
           <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange} />
         ))}
         
-        <button>Submit</button>
+        <button onClick={handleLogin}>Submit</button>
       </form>
     </div>
   );
