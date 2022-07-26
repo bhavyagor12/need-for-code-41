@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.js";
+import teamRoutes from "./routes/team.js";
+import assignmentRoutes from "./routes/assignments.js";
 import  Cors  from "cors";
 const app = express();
 dotenv.config();
@@ -20,6 +22,9 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(Cors());
 app.use("/api/auth", authRoutes);
+app.use("/api/teams", teamRoutes);
+app.use("/api/assignments", assignmentRoutes);
+
 // error middleware
 app.use((err, req, res, next) => {
   const status = err.status || 500;

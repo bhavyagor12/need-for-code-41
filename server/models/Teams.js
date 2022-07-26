@@ -5,6 +5,7 @@ const TeamsSchema = new mongoose.Schema(
     name: {
       type: "string",
       required: true,
+      unique: true,
     },
     teacherid: {
       type: "string",

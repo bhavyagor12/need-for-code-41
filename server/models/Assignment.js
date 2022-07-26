@@ -20,10 +20,10 @@ const AssignmentSchema = new mongoose.Schema(
       required:true,
     },
     timeofsubmission:{
-      type: date,
+      type: Date,
     },
     lastdate:{
-        type: date,
+        type: Date,
     },
     totalmarks:{
       type: Number,
