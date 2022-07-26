@@ -12,7 +12,7 @@ import Parent from "./parent/pages/Parent";
 import { ThemeProvider } from "styled-components";
 import Student from "./student/pages/Student";
 import StudentCalender from "./student/pages/StudentCalender";
-
+import Profile from "./parent/pages/Profile";
 function App() {
 
   return (
@@ -22,7 +22,7 @@ function App() {
     <Routes>
       <Route path="/signin" element={<Login/>} />
       <Route path="/parent" element={<Parent/>} />
-      <Route path="/parent/calender" element={<Calender/>} />
+      <Route path="/parent/calender" element={<ParentCalender/>} />
       <Route path="/parent/profile/:sapid" element={<Profile/>} />
 
     </Routes>
