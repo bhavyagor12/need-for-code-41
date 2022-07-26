@@ -85,13 +85,13 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
     }
     return <Container>
         <Wrapper>
-            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/parent" style={{ textDecoration: "none", color: "inherit" }}>
                 <Logo >
                     <Img src={logo} />
                     Parent Portal
                 </Logo>
             </Link>
-            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/parent" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <AiOutlineHome />
                     Home
@@ -110,11 +110,14 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
                 </Item>
             </Link>
             <Hr />
-            <Item>
-                <MdOutlineVideoLibrary />
-                Raise Query
-            </Item>
-            <Item>
+            <Link to="hello">
+                <Item>
+                    <MdOutlineVideoLibrary />
+                    Raise Query
+                </Item>
+            </Link>
+
+            <Item >
                 <MdOutlineVideoLibrary />
                 Calender
             </Item>

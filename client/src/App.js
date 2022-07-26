@@ -2,7 +2,7 @@ import Login from "./login/pages/Login"
 import ReactDOM from "react-dom/client";
 // import Parent from "./parents/pages/parents"
 // import Sidebar from "./components/Sidebar";
-
+import Calender from "./parent/pages/Calender"
 import {
   BrowserRouter,
   Routes,
@@ -23,7 +23,8 @@ function App() {
     
     <Routes>
       <Route path="/login" element={<Login/>} />
-      <Route path="/" element={<Parent/>} />
+      <Route path="/parent" element={<Parent/>} />
+      <Route path="/parent/calender" element={<Calender/>} />
     </Routes>
   </BrowserRouter>
   
