@@ -31,7 +31,7 @@ import { ThemeProvider } from "styled-components";
 import Student from "./student/pages/Student";
 import StudentCalender from "./student/pages/StudentCalender";
 import Profile from "./parent/pages/Profile";
-import Signin from "./login/pages/signin";
+import Signin from "./login/pages/Signin";
 // import StudentTable from "./student/pages/StudentTable";
 
 function App() {
