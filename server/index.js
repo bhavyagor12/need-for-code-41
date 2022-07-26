@@ -2,7 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-import authRoutes from "./routes/auth.js"
+import authRoutes from "./routes/auth.js";
+import  Cors  from "cors";
 const app = express();
 dotenv.config();
 
@@ -17,6 +18,7 @@ const connect = () => {
 
 app.use(cookieParser());
 app.use(express.json());
+app.use(Cors());
 app.use("/api/auth", authRoutes);
 // error middleware
 app.use((err, req, res, next) => {
