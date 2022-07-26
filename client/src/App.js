@@ -22,15 +22,9 @@ function App() {
     <Routes>
       <Route path="/signin" element={<Login/>} />
       <Route path="/parent" element={<Parent/>} />
-<<<<<<< Updated upstream
-      <Route path="/student" element={<Student/>} />
-      <Route path="/student/calender" element={<StudentCalender/>} />
-      <Route path="/parent/calender" element={<ParentCalender/>} />
-=======
       <Route path="/parent/calender" element={<Calender/>} />
       <Route path="/parent/profile/:sapid" element={<Profile/>} />
 
->>>>>>> Stashed changes
     </Routes>
   </BrowserRouter>
   
