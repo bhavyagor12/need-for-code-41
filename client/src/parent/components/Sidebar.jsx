@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../../images/needforcode.png";
-import { AiOutlineHome, AiOutlineSearch } from 'react-icons/ai';
-import { MdSubscriptions, MdOutlineVideoLibrary, MdHistory, MdOutlineLibraryMusic, MdSportsSoccer, MdSportsEsports, MdOutlineLocalMovies, MdOutlineLiveTv, MdOutlineReport, MdHelpOutline, MdOutlineAccountCircle } from 'react-icons/md';
+import { AiOutlineCalendar,AiOutlineQuestionCircle,AiOutlineTeam,AiOutlineHome, AiOutlineSearch } from 'react-icons/ai';
+import { MdAssignment,MdSubscriptions, MdOutlineVideoLibrary, MdHistory, MdOutlineLibraryMusic, MdSportsSoccer, MdSportsEsports, MdOutlineLocalMovies, MdOutlineLiveTv, MdOutlineReport, MdHelpOutline, MdOutlineAccountCircle } from 'react-icons/md';
+import { RiFeedbackFill} from 'react-icons/ri';
 import { IoMdSettings } from "react-icons/io"
 import { SiGooglenews } from 'react-icons/si';
 import { VscColorMode } from 'react-icons/vsc'
@@ -95,7 +96,7 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
             <Link to="/parent" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <AiOutlineHome />
-                    Home
+                    Profile
                 </Item>
             </Link>
             <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
@@ -104,22 +105,34 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
                     Report
                 </Item>
             </Link>
-            <Link to="subscriptions" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
-                    <MdSubscriptions />
-                    Feedbacks
+                    <AiOutlineTeam/>
+                    Teams
+                </Item>
+            </Link>
+            <Hr/>
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+                <Item>
+                    <MdAssignment/>
+                    Assignments
+                </Item>
+            </Link>
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+                <Item>
+                    <RiFeedbackFill/>
+                    Feedback
+                </Item>
+            </Link>
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+                <Item>
+                <AiOutlineQuestionCircle/>
+                    Queries
                 </Item>
             </Link>
             <Hr />
-            <Link to="hello">
-                <Item>
-                    <MdOutlineVideoLibrary />
-                    Raise Query
-                </Item>
-            </Link>
-
             <Item >
-                <MdOutlineVideoLibrary />
+                <AiOutlineCalendar/>
                 Calender
             </Item>
             <Item>
