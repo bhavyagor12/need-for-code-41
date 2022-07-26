@@ -3,6 +3,7 @@ import styled from "styled-components";
 import logo from "../../images/needforcode.png";
 import { AiOutlineCalendar,AiOutlineQuestionCircle,AiOutlineTeam,AiOutlineHome, AiOutlineSearch } from 'react-icons/ai';
 import { MdAssignment,MdSubscriptions, MdOutlineVideoLibrary, MdHistory, MdOutlineLibraryMusic, MdSportsSoccer, MdSportsEsports, MdOutlineLocalMovies, MdOutlineLiveTv, MdOutlineReport, MdHelpOutline, MdOutlineAccountCircle } from 'react-icons/md';
+import {TbEngine} from 'react-icons/tb';
 import { RiFeedbackFill} from 'react-icons/ri';
 import { IoMdSettings } from "react-icons/io"
 import { SiGooglenews } from 'react-icons/si';
@@ -131,6 +132,10 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
                 </Item>
             </Link>
             <Hr />
+            <Item >
+                <TbEngine/>
+                Mass Entry
+            </Item>
             <Item >
                 <AiOutlineCalendar/>
                 Calender
