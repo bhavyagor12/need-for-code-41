@@ -1,16 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../../images/needforcode.png";
+import { AiOutlineCalendar,AiOutlineQuestionCircle,AiOutlineTeam,AiOutlineHome, AiOutlineSearch } from 'react-icons/ai';
+import { MdAssignment,MdSubscriptions, MdOutlineVideoLibrary, MdHistory, MdOutlineLibraryMusic, MdSportsSoccer, MdSportsEsports, MdOutlineLocalMovies, MdOutlineLiveTv, MdOutlineReport, MdHelpOutline, MdOutlineAccountCircle } from 'react-icons/md';
+import {TbEngine} from 'react-icons/tb';
+import { RiFeedbackFill} from 'react-icons/ri';
+import { IoMdSettings } from "react-icons/io"
+import { SiGooglenews } from 'react-icons/si';
 import { VscColorMode } from 'react-icons/vsc'
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { useDispatch } from 'react-redux';
 import { logout } from "../../redux/userSlice";
-import { AiOutlineCalendar, AiOutlineHome, AiOutlineQuestionCircle, AiOutlineSearch, AiOutlineTable } from "react-icons/ai";
-import { MdAssignment, MdOutlineDateRange, MdOutlineVideoLibrary, MdSubscriptions } from "react-icons/md";
-import { SiTodoist } from "react-icons/si";
-import { HiDocumentReport } from "react-icons/hi";
+
 const Container = styled.div`
   flex: 1;
   background-color:${({ theme }) => theme.bg};
@@ -67,14 +70,13 @@ gap: 3px;
   cursor: pointer;
 `
 
-const StudentSidebar = ({ darkMode, setDarkMode }) => {
+const Sidebar = ({ darkMode, setDarkMode }) => {
     const { user } = useSelector(state => state.user);
     const dispatch = new useDispatch();
     const navigate = useNavigate();
     const logoutUser = async () => {
         dispatch(logout());
         navigate("/signin");
-
         try {
             const res = await axios.get("auth/logout")
             console.log(res);
@@ -86,62 +88,75 @@ const StudentSidebar = ({ darkMode, setDarkMode }) => {
     }
     return <Container>
         <Wrapper>
-            <Link to="/student" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/parent" style={{ textDecoration: "none", color: "inherit" }}>
                 <Logo >
                     <Img src={logo} />
                     Student Portal
                 </Logo>
             </Link>
-            <Link to="/student" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/parent" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <AiOutlineHome />
-                    Home
+                    Profile
                 </Item>
             </Link>
             <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
-                    <HiDocumentReport />
+                    <AiOutlineSearch />
                     Report
                 </Item>
             </Link>
-            <Link to="subscriptions" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
-                    <MdAssignment />
+                    <AiOutlineTeam/>
+                    Teams
+                </Item>
+            </Link>
+            <Hr/>
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+                <Item>
+                    <MdAssignment/>
                     Assignments
                 </Item>
             </Link>
-            <Hr />
-            <Link to="hello">
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
-                    <AiOutlineQuestionCircle />
-                    Raise Query
+                    <MdAssignment/>
+                    Submit Assignments
                 </Item>
             </Link>
-            <Link to="/student/calender">
-                <Item >
-                    <AiOutlineCalendar />
-                    Calender
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+                <Item>
+                    <RiFeedbackFill/>
+                    Feedback
                 </Item>
             </Link>
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+                <Item>
+                <AiOutlineQuestionCircle/>
+                    Queries
+                </Item>
+            </Link>
+            <Hr />
+            <Item >
+                <AiOutlineCalendar/>
+                Calender
+            </Item>
             <Item>
-                <SiTodoist />
+                <MdOutlineVideoLibrary />
                 To do list
             </Item>
             <Item>
-                <MdOutlineDateRange />
+                <MdOutlineVideoLibrary />
                 Appointment
             </Item>
-            <Item>
-                <AiOutlineTable />
-                Time table
-            </Item>
+    
             <Button onClick={logoutUser}>Log out</Button><Hr />
             <Item onClick={() => setDarkMode(!darkMode)}>
                 <VscColorMode />
                 {darkMode ? "Light" : "Dark"}
             </Item>
-        </Wrapper>
-    </Container>;
+        </Wrapper></Container>;
 };
 
-export default StudentSidebar;
+export default Sidebar;

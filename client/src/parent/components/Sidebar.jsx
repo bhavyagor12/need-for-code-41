@@ -133,10 +133,6 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
             </Link>
             <Hr />
             <Item >
-                <TbEngine/>
-                Mass Entry
-            </Item>
-            <Item >
                 <AiOutlineCalendar/>
                 Calender
             </Item>
@@ -148,10 +144,7 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
                 <MdOutlineVideoLibrary />
                 Appointment
             </Item>
-            <Item>
-                <MdOutlineVideoLibrary />
-                Teachers table
-            </Item>
+    
             <Button onClick={logoutUser}>Log out</Button><Hr />
             <Item onClick={() => setDarkMode(!darkMode)}>
                 <VscColorMode />
