@@ -43,7 +43,6 @@ function App() {
     <Routes>
       <Route path="/signin" element={<Signin/>} />
       <Route path="/parent" element={<Parent/>} />
-   
       <Route path="/parent/calender" element={<ParentCalender/>} />
       <Route path="/student/calender" element={<StudentCalender/>} />
       <Route path='/student' element={<Student />} />

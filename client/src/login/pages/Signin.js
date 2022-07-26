@@ -82,11 +82,11 @@ const Signin = () => {
       console.log(res.data);
       dispatch(loginSuccess(res.data));
     //   if(res.typeofuser === "teacher"){}
-      if(res.typeofuser === "student"){
-        window.location.href = "localhost:3000/student";
+      if(res.data.typeofuser === "student"){
+        window.location.href = "http://localhost:3001/student";
       }
-      if(res.typeofuser === "parent"){
-        window.location.href = "localhost:3000/parent";
+      if(res.data.typeofuser === "parent"){
+        window.location.href = "http://localhost:3001/parent";
       }
 
 
