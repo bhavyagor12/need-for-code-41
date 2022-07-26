@@ -18,9 +18,6 @@ const AssignmentStudentSchema = new mongoose.Schema(
       type: Boolean,
       required: true,
     },
-    LateSubmitted:{
-      type: Boolean,
-    },
     marksgiven:{
       type: Number,
     },
