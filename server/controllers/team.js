@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import Teams from "../models/Teams.js";
 import User from "../models/Users.js";
 
+
 export const addTeams = async (req, res, next) => {
     try {
       const newUser = new User({ ...req.body});
