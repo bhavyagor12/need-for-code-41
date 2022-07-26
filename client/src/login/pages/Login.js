@@ -58,7 +58,7 @@ function Login() {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("/auth/signin", {values});
+      const res = await axios.post("auth/signin", {values});
       dispatch(loginSuccess(res.data));
     } catch (err) {
       dispatch(loginFailure());
