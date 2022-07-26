@@ -5,6 +5,8 @@ import { darkTheme, lightTheme } from "../../utils/Theme";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from '../components/Navbar';
 import Login from '../../login/pages/Login';
+import Calender from '../../components/Calender/Calender';
+
 const Container = styled.div`
   display: flex;
 `;
@@ -17,24 +19,24 @@ const Wrapper = styled.div`
   padding: 22px 96px;
 `;
 
-const Parent = () => {
-    const [darkMode, setDarkMode] = useState(true);
-    return (
-        <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-            <Container className="App">
+const ParentCalender = () => {
+  const [darkMode, setDarkMode] = useState(true);
+  return (
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <Container className="App">
 
-                <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
-                <Main>
-                    <Navbar />
+        <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Main>
+          <Navbar />
 
-                    <Wrapper>
+          <Wrapper>
+            <Calender />
+          </Wrapper>
+        </Main>
 
-                    </Wrapper>
-                </Main>
-
-            </Container>
-        </ThemeProvider >
-    )
+      </Container>
+    </ThemeProvider >
+  )
 }
 
-export default Parent
+export default ParentCalender
