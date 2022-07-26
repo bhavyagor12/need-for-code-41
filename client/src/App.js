@@ -40,7 +40,7 @@ function App() {
     <BrowserRouter>
     
     <Routes>
-      <Route path="/signin" element={<Login/>} />
+      <Route path="/signin" element={<Signin/>} />
       <Route path="/parent" element={<Parent/>} />
    
       <Route path="/parent/calender" element={<ParentCalender/>} />

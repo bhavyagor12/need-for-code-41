@@ -12,6 +12,9 @@ function Login() {
    password:'',
 
   })
+  const [sapid,setSapid] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const dispatch=useDispatch();
   const inputs=[
@@ -68,7 +71,10 @@ function Login() {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("auth/signin", {values});
+      setSapid(values.sapid);
+      setEmail(values.email);
+      setPassword(values.password);
+      const res = await axios.post("/auth/signin", {sapid,email,password});
       dispatch(loginSuccess(res.data));
     } catch (err) {
       dispatch(loginFailure());

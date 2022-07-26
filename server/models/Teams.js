@@ -40,6 +40,23 @@ const TeamsSchema = new mongoose.Schema(
         }
       }],
       default: [],
+    },
+    
+    queries:{
+      type: [{
+          askerid: {
+            type: "string",
+            required: true,
+          },
+          question: {
+            type: "string",
+            required: true,
+          },
+          answer: {
+            type: "string",
+          }
+      }],
+      default: [],
     }
   },
   {
