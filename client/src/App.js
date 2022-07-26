@@ -32,6 +32,7 @@ import Student from "./student/pages/Student";
 import StudentCalender from "./student/pages/StudentCalender";
 import Profile from "./parent/pages/Profile";
 import Signin from "./login/pages/Signin";
+import StudentTable from "./student/pages/StudentTable";
 // import StudentTable from "./student/pages/StudentTable";
 
 function App() {
@@ -46,7 +47,7 @@ function App() {
       <Route path="/parent/calender" element={<ParentCalender/>} />
       <Route path="/student/calender" element={<StudentCalender/>} />
       <Route path='/student' element={<Student />} />
-      {/* <Route path="/student/table" element={<StudentTable/>} /> */}
+      <Route path="/student/table" element={<StudentTable/>} />
       <Route path="/parent/profile" element={<Profile/>} />
       <Route path="/parent/raisequery" element={<RaiseQuery/>} />
 

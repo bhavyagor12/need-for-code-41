@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from '../components/Navbar';
 import Login from '../../login/pages/Login';
 import Calender from '../../components/Calender/Calender';
+import Table from '../../components/Tables';
 import Tables from '../../components/Tables';
 
 const Container = styled.div`

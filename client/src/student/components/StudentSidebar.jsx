@@ -109,7 +109,7 @@ const StudentSidebar = ({ darkMode, setDarkMode }) => {
                 </Item>
             </Link>
             <Hr />
-            <Link to="hello">
+            <Link to="/student/table">
                 <Item>
                     <AiOutlineQuestionCircle />
                     Raise Query
