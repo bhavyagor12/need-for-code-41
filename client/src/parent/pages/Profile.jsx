@@ -5,9 +5,7 @@ import { darkTheme, lightTheme } from "../../utils/Theme";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Login from "../../login/pages/Login";
-import "./Profile.css";
 import needforcode from "../../images/needforcode.png";
-import computer from "../../images/computer.png";
 import axios from "axios";
 const Container = styled.div`
   display: flex;
@@ -80,12 +78,12 @@ const Profile = () => {
                 <div className="hello">
                 <div className="square">
                   COMPUTERS
-                  <img src={computer} alt="computer" className="computer" />
+                  {/* <img src={computer} alt="computer" className="computer" /> */}
                 </div>
 
                 <div className="square">
                   COMPUTERS
-                  <img src={computer} alt="computer" className="computer" />
+                  {/* <img src={computer} alt="computer" className="computer" /> */}
                 </div>
                 </div>
               </div>
