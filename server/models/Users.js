@@ -3,8 +3,9 @@ import mongoose from "mongoose";
 const UserSchema = new mongoose.Schema(
   {
     sapid:{
-      type: "Integer",
+      type: Number,
       required: true,
+      size:10,
       unique: true
     },
     name: {
@@ -25,7 +26,7 @@ const UserSchema = new mongoose.Schema(
       type: "string",
     },
     yearofgraduation: {
-      type: integer,
+      type: Number,
       length: 4,
     },
     typeofuser:{

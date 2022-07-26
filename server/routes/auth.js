@@ -9,3 +9,5 @@ router.post("/signup", signup);
 //sign in
 router.post("/signin", signin);
 router.get("/logout", signout);
+
+export default router;

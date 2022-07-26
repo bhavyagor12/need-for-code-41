@@ -1,10 +1,21 @@
 import Login from "./login/pages/Login"
+import ReactDOM from "react-dom/client";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="bg-black min-h-screen">
-    <Login />
-    </div>
+    <div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/login" element={<Login/>} />
+    </Routes>
+  </BrowserRouter>
+  
+  </div> 
   );
 }
 

@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-
+import authRoutes from "./routes/auth.js"
 const app = express();
 dotenv.config();
 
@@ -17,7 +17,7 @@ const connect = () => {
 
 app.use(cookieParser());
 app.use(express.json());
-
+app.use("/api/auth", authRoutes);
 // error middleware
 app.use((err, req, res, next) => {
   const status = err.status || 500;
@@ -28,6 +28,8 @@ app.use((err, req, res, next) => {
     message: message,
   });
 }); // error handling
+
+
 
 app.listen(8000, () => {
   connect();
