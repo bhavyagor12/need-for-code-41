@@ -1,5 +1,4 @@
 import { createError } from "../error.js";
-import jwt from "jsonwebtoken";
 import Teams from "../models/Teams.js";
 import User from "../models/Users.js";
 import AssignmentStudent from "../models/AssignmentStudent.js";
@@ -21,7 +20,8 @@ export const addStudents = async (req, res, next) => {
     if (!team) return next(createError(404, "Team not found!"));
     const user = await User.findOne({ sapid: req.body.sapid });
     if (!user) return next(createError(404, "User not found!"));
-    team.students.push(user._id);
+    team.students.push({studentid: user._id.toString()});
+    console.log(team.students)
     await team.save();
     res.status(200).send("User has been added to team");
   } catch (err) {
@@ -67,5 +67,25 @@ export const sendAssignments= async (req, res, next) => {
     }
 }
 
+export const addAttendance = async (req, res, next) => {
+  try {
+    const team = await Teams.findOne({ teamname: req.name });
+    if (!team) return next(createError(404, "Team not found!"));
+    const user = await User.findOne({ sapid: req.body.sapid });
+    if (!user) return next(createError(404, "User not found!"));
+    team.students.forEach((element) => {
+      if(element.studentid === user._id.toString())
+      {
+        req.body.attendance.forEach((e) => {
+        element.attendance.push(e);
+        })
+        res.send("Attendance added");
+      }
+    })
+    team.save();
+  } catch (err) {
+    next(createError(404, "Error!"));
+  }
+}
 
 

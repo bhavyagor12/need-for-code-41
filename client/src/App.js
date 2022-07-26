@@ -32,6 +32,7 @@ import Student from "./student/pages/Student";
 import StudentCalender from "./student/pages/StudentCalender";
 import Profile from "./parent/pages/Profile";
 import Signin from "./login/pages/Signin";
+import Papa from "./pap/papa";
 // import StudentTable from "./student/pages/StudentTable";
 
 function App() {
@@ -50,6 +51,9 @@ function App() {
       <Route path="/parent/profile" element={<Profile/>} />
       <Route path="/parent/raisequery" element={<RaiseQuery/>} />
 
+      <Route path="/login" element={<Login/>} />
+
+      <Route path="/papa" element={<Papa/>} />
 
 
     </Routes>

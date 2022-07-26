@@ -12,7 +12,12 @@ const TeamsSchema = new mongoose.Schema(
       required: true,
     },
     students: {
-        type: ["string"],
+        type: [
+          {
+            studentid: {type: "string", required: true},
+            attendance: {type: [Boolean]}
+          }
+        ],
         default: [],
     },
     assignments: {
