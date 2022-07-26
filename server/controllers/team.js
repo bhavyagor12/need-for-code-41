@@ -8,6 +8,7 @@ export const addTeams = async (req, res, next) => {
   try {
     const newTeam = new Teams({ ...req.body });
     await newTeam.save();
+    res.status(200).send("Team has been created");
   } catch (err) {
     next(createError(404, "Team already exists!"));
   }
