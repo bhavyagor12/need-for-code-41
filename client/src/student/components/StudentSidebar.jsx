@@ -134,7 +134,6 @@ const StudentSidebar = ({ darkMode, setDarkMode }) => {
                 Time table
             </Item>
             <Button onClick={logoutUser}>Log out</Button><Hr />
-
             <Item onClick={() => setDarkMode(!darkMode)}>
                 <VscColorMode />
                 {darkMode ? "Light" : "Dark"}

@@ -79,7 +79,7 @@ const Signin = () => {
     dispatch(loginStart());
     try {
       const res = await axios.post("/auth/signin", { sapid,email, password });
-      console.log(res.data);
+      // console.log(res.data);
       dispatch(loginSuccess(res.data));
     //   if(res.typeofuser === "teacher"){}
       if(res.data.typeofuser === "student"){
@@ -88,9 +88,6 @@ const Signin = () => {
       if(res.data.typeofuser === "parent"){
         window.location.href = "http://localhost:3001/parent";
       }
-
-
-      
     } catch (err) {
       dispatch(loginFailure());
     }

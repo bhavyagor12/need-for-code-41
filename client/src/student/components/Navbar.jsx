@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MdSearch } from "react-icons/md";
 import { RiAddBoxLine } from "react-icons/ri";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import {
     NavbarContainer,
@@ -51,6 +52,7 @@ background-color: #999;
 `;
 function Navbar() {
     const [extendNavbar, setExtendNavbar] = useState(false);
+    const {user} = useSelector(state => state.user);
 
     return (
         <NavbarContainer extendNavbar={extendNavbar}>
@@ -67,7 +69,7 @@ function Navbar() {
                 <RightContainer>
                     <User>
                         <Avatar src="https://imgs.search.brave.com/3hoi7NV2Nv6I6qX2OMhh1DmzpLX8ApGoT22G8s5iFWM/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvcHJl/dmlld3MvMDAwLzQz/OS84NjMvb3JpZ2lu/YWwvdmVjdG9yLXVz/ZXJzLWljb24uanBn " />
-                        John Doe
+                        {user?.name}
                     </User>
                 </RightContainer>
             </NavbarInnerContainer>
