@@ -22,7 +22,9 @@ function App() {
     <Routes>
       <Route path="/signin" element={<Login/>} />
       <Route path="/parent" element={<Parent/>} />
+      <Route path="/student" element={<Student/>} />
       <Route path="/parent/calender" element={<ParentCalender/>} />
+      <Route path="/student/calender" element={<StudentCalender/>} />
       <Route path="/parent/profile/:sapid" element={<Profile/>} />
 
     </Routes>
