@@ -2,19 +2,16 @@ import Login from "./login/pages/Login"
 import ReactDOM from "react-dom/client";
 // import Parent from "./parents/pages/parents"
 // import Sidebar from "./components/Sidebar";
-import Calender from "./parent/pages/Calender"
-import Profile from "./parent/pages/Profile";
+import ParentCalender from "./parent/pages/ParentCalender"
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
-
-import { useEffect, useState } from "react";
-import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import { FiSettings } from "react-icons/fi";
 import Parent from "./parent/pages/Parent";
 import { ThemeProvider } from "styled-components";
+import Student from "./student/pages/Student";
+import StudentCalender from "./student/pages/StudentCalender";
 
 function App() {
 
@@ -25,9 +22,9 @@ function App() {
     <Routes>
       <Route path="/login" element={<Login/>} />
       <Route path="/parent" element={<Parent/>} />
-      <Route path="/parent/calender" element={<Calender/>} />
-      <Route path="/parent/profile" element={<Profile/>} />
-
+      <Route path="/student" element={<Student/>} />
+      <Route path="/student/calender" element={<StudentCalender/>} />
+      <Route path="/parent/calender" element={<ParentCalender/>} />
     </Routes>
   </BrowserRouter>
   
