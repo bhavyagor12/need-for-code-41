@@ -14,6 +14,32 @@ const TeamsSchema = new mongoose.Schema(
     students: {
         type: ["string"],
         default: [],
+    },
+    assignments: {
+      type: [{
+        description: {
+          type: "string",
+          required: true,
+        },
+        typeofassignment: {
+          type: "string",
+          required:true,
+        },
+        timeofsubmission:{
+          type: Date,
+        },
+        lastdate:{
+            type: Date,
+        },
+        totalmarks:{
+          type: Number,
+        },
+        sent:{
+          type: Boolean,
+          required: true,
+        }
+      }],
+      default: [],
     }
   },
   {
