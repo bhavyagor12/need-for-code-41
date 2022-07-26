@@ -2,6 +2,11 @@ import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema(
   {
+    sapid:{
+      type: "Integer",
+      required: true,
+      unique: true
+    },
     name: {
       type: "string",
       required: true,
@@ -14,21 +19,19 @@ const UserSchema = new mongoose.Schema(
     },
     password: {
       type: "string",
+      required: true,
     },
-    img: {
+    profileimg: {
       type: "string",
     },
-    subscribers: {
-      type: Number,
-      default: 0,
+    yearofgraduation: {
+      type: integer,
+      length: 4,
     },
-    subcribedUsers: {
-      type: [String],
-    },
-    fromGoogle: {
-      type: Boolean,
-      default: false,
-    },
+    typeofuser:{
+      type: "string",
+      required: true,
+    }
   },
   {
     timestamps: true,

@@ -5,9 +5,7 @@ import jwt from "jsonwebtoken";
 
 export const signup = async (req, res, next) => {
     try {
-      const salt = bcrypt.genSaltSync(10);
-      const hash = bcrypt.hashSync(req.body.password, salt);
-      const newUser = new User({ ...req.body, password: hash });
+      const newUser = new User({ ...req.body});
       await newUser.save();
       res.status(200).send("user has been created");
     } catch (err) {
@@ -17,10 +15,10 @@ export const signup = async (req, res, next) => {
 
 export const signin = async (req, res, next) => {
     try {
-      const user = await User.findOne({ name: req.body.name });
+      const user = await User.findOne({ sapid: req.body.sapid });
       if (!user) return next(createError(404, "user not found!"));
-      const isCorrect = await bcrypt.compare(req.body.password, user.password);
-      if (!isCorrect) return next(createError(404, "password mismatch!"));
+      
+      if (user.password!==req.body.password) return next(createError(404, "password mismatch!"));
   
       const token = jwt.sign({ id: user._id }, process.env.JWT);
       const { password, ...others } = user._doc; //removing password from the users so we dont send password back even if its hashed
