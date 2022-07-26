@@ -6,7 +6,7 @@ import { MdSubscriptions, MdOutlineVideoLibrary, MdHistory, MdOutlineLibraryMusi
 import { IoMdSettings } from "react-icons/io"
 import { SiGooglenews } from 'react-icons/si';
 import { VscColorMode } from 'react-icons/vsc'
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { useDispatch } from 'react-redux';
@@ -71,9 +71,10 @@ gap: 3px;
 const Sidebar = ({ darkMode, setDarkMode }) => {
     const { user } = useSelector(state => state.user);
     const dispatch = new useDispatch();
-
+    const navigate = useNavigate();
     const logoutUser = async () => {
         dispatch(logout());
+        navigate("/signin");
         try {
             const res = await axios.get("auth/logout")
             console.log(res);
@@ -134,7 +135,6 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
                 Teachers table
             </Item>
             <Button onClick={logoutUser}>Log out</Button><Hr />
-
             <Item onClick={() => setDarkMode(!darkMode)}>
                 <VscColorMode />
                 {darkMode ? "Light" : "Dark"}

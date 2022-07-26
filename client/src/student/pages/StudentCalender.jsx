@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import Sidebar from '../components/StudentSidebar'
 import { darkTheme, lightTheme } from "../../utils/Theme";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from '../components/Navbar';
+import Navbar from '../../components/Navbar';
 import Login from '../../login/pages/Login';
 import Calender from '../../components/Calender/Calender';
 const Container = styled.div`

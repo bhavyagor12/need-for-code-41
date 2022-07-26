@@ -3,12 +3,13 @@ import styled, { ThemeProvider } from "styled-components";
 import Sidebar from "../components/Sidebar";
 import { darkTheme, lightTheme } from "../../utils/Theme";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Navbar from '../../components/Navbar';
 import Login from "../../login/pages/Login";
 // import "./Profile.css";
 import needforcode from "../../images/needforcode.png";
 // import computer from "../../images/computer.png";
 import axios from "axios";
+import './Profile.css'
 const Container = styled.div`
   display: flex;
 `;
@@ -32,30 +33,30 @@ const Wrapper = styled.div`
 
 const Profile = () => {
   const [darkMode, setDarkMode] = useState(true);
-  const SapID = useParams.sapid
+  // const SapID = useParams.sapid
 
-  let axiosConfig = {
-    headers: {
-      'Content-Type': 'application/json;charset=UTF-8',
-      "Access-Control-Allow-Origin": "*",
-    }
-  };
+  // let axiosConfig = {
+  //   headers: {
+  //     'Content-Type': 'application/json;charset=UTF-8',
+  //     "Access-Control-Allow-Origin": "*",
+  //   }
+  // };
 
-  const [dataa, setDataa] = useState(false);
+  // const [dataa, setDataa] = useState(false);
 
-  const getDataa = () => {
-    axios.post('http://localhost:8000/api/get/getuser', { sapid: SapID }, axiosConfig).then(
-      (response) => response.json()
-    ).then(data => {
-      console.log(data);
-      // setDataa({
-      //     ...dataa
-      // });
-      console.log(dataa);
-    })
-  };
+  // const getDataa = () => {
+  //   axios.post('http://localhost:8000/api/get/getuser', { sapid: SapID }, axiosConfig).then(
+  //     (response) => response.json()
+  //   ).then(data => {
+  //     console.log(data);
+  //     // setDataa({
+  //     //     ...dataa
+  //     // });
+  //     console.log(dataa);
+  //   })
+  // };
 
-  useEffect(() => getDataa(), []);
+  // useEffect(() => getDataa(), []);
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Container className="App">
@@ -80,12 +81,12 @@ const Profile = () => {
                 <div className="hello">
                   <div className="square">
                     COMPUTERS
-                    {/* <img src={computer} alt="computer" className="computer" /> */}
+                    <img src={needforcode} alt="computer" className="computer" />
                   </div>
 
                   <div className="square">
                     COMPUTERS
-                    {/* <img src={computer} alt="computer" className="computer" /> */}
+                    <img src={needforcode} alt="computer" className="computer" />
                   </div>
                 </div>
               </div>
