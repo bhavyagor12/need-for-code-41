@@ -12,6 +12,7 @@ function Login() {
    password:'',
 
   })
+
   const dispatch=useDispatch();
   const inputs=[
     {
@@ -47,24 +48,21 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(loginStart());
+    try {
+      const res =  axios.post("http://localhost:8000/auth/signin",{values});
+      // dispatch(loginSuccess(res.data));
+      console.log(res.data);
+    } catch (err) {
+      dispatch(loginFailure());
+    }
   }
 
   const onChange=(e)=>{
     setValues({...values,
       [e.target.name]:e.target.value})
   }
-  
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    dispatch(loginStart());
-    try {
-      const res = await axios.post("/auth/signin", {values});
-      dispatch(loginSuccess(res.data));
-    } catch (err) {
-      dispatch(loginFailure());
-    }
-    
-  };
+ 
   console.log(values);
 
   return (
@@ -75,7 +73,7 @@ function Login() {
           <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange} />
         ))}
         
-        <button onClick={handleLogin}>Submit</button>
+        <button>Submit</button>
       </form>
     </div>
   );

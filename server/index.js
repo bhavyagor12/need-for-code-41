@@ -6,7 +6,7 @@ import authRoutes from "./routes/auth.js";
 import teamRoutes from "./routes/team.js";
 import evaluationRoutes from "./routes/evaluation.js";
 import getRoutes from "./routes/get.js";
-import  Cors  from "cors";
+import  cors  from "cors";
 const app = express();
 dotenv.config();
 
@@ -23,8 +23,12 @@ const connect = () => {
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(Cors({origin: '*'}));
-
+app.use(cors());
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', '*');
+  next();
+})
 app.use("/api/auth", authRoutes);
 app.use("/api/teams", teamRoutes);
 app.use("/api/evaluation", evaluationRoutes);

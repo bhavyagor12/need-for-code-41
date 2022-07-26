@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import Sidebar from "../components/Sidebar";
 import { darkTheme, lightTheme } from "../../utils/Theme";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Login from "../../login/pages/Login";
 import "./Profile.css";
@@ -32,17 +32,25 @@ const Wrapper = styled.div`
 
 const Profile = () => {
   const [darkMode, setDarkMode] = useState(true);
+  const SapID= useParams.sapid
+
+  let axiosConfig = {
+    headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+        "Access-Control-Allow-Origin": "*",
+    }
+  };
 
   const[dataa,setDataa]=useState(false);
 
     const getDataa=()=>{
-        axios.post('http://localhost:8000/api/get/getuser').then(
+        axios.post('http://localhost:8000/api/get/getuser',{sapid:SapID}, axiosConfig).then(
             (response)=> response.json()
         ).then(data => {
             console.log(data);
-            setDataa({
-                ...dataa
-            });
+            // setDataa({
+            //     ...dataa
+            // });
             console.log(dataa);
         })
     };
