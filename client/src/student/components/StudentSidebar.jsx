@@ -91,19 +91,13 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
             <Link to="/parent" style={{ textDecoration: "none", color: "inherit" }}>
                 <Logo >
                     <Img src={logo} />
-                    Student Portal
+                    Teacher Portal
                 </Logo>
             </Link>
             <Link to="/parent" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <AiOutlineHome />
                     Profile
-                </Item>
-            </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
-                <Item>
-                    <AiOutlineSearch />
-                    Report
                 </Item>
             </Link>
             <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
@@ -116,40 +110,46 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
             <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <MdAssignment/>
-                    Assignments
+                    Set Assignments
                 </Item>
             </Link>
             <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <MdAssignment/>
-                    Submit Assignments
-                </Item>
-            </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
-                <Item>
-                    <RiFeedbackFill/>
-                    Feedback
+                    Grade Assignments
                 </Item>
             </Link>
             <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                 <AiOutlineQuestionCircle/>
-                    Queries
+                    Answer Queries
                 </Item>
             </Link>
             <Hr />
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Item>
+                <TbEngine/>
+                    Mass Entry
+            </Item>
+            </Link>
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
             <Item >
                 <AiOutlineCalendar/>
                 Calender
             </Item>
+            </Link>
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
             <Item>
                 <MdOutlineVideoLibrary />
                 To do list
             </Item>
+            </Link>
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
             <Item>
                 <MdOutlineVideoLibrary />
                 Appointment
             </Item>
+            </Link>
     
             <Button onClick={logoutUser}>Log out</Button><Hr />
             <Item onClick={() => setDarkMode(!darkMode)}>
