@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 // import Parent from "./parents/pages/parents"
 // import Sidebar from "./components/Sidebar";
 import Calender from "./parent/pages/Calender"
+import Profile from "./parent/pages/Profile";
 import {
   BrowserRouter,
   Routes,
@@ -25,6 +26,8 @@ function App() {
       <Route path="/login" element={<Login/>} />
       <Route path="/parent" element={<Parent/>} />
       <Route path="/parent/calender" element={<Calender/>} />
+      <Route path="/parent/profile" element={<Profile/>} />
+
     </Routes>
   </BrowserRouter>
   
