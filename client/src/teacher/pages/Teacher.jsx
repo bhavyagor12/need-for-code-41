@@ -21,25 +21,6 @@ justify-content: center;
 `;
 
 const Teacher = () => {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  const [darkMode, setDarkMode] = useState(true);
-  return (
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <Container>
-        <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Main>
-          <Navbar />
-          <Wrapper>
-            {/* <StudentProfile /> */}
-          </Wrapper>
-        </Main>
-=======
-=======
->>>>>>> parent of 82409cd (charts and parents done)
-=======
->>>>>>> parent of 82409cd (charts and parents done)
     const [darkMode, setDarkMode] = useState(true);
     return (
         <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
@@ -48,27 +29,14 @@ const Teacher = () => {
                 <Main>
                     <Navbar />
                     <Wrapper>
-<<<<<<< HEAD
-<<<<<<< HEAD
                         <StudentProfile />
                     </Wrapper>
                 </Main>
->>>>>>> refs/remotes/origin/main
-=======
-                        {/* <StudentProfile /> */}
-                    </Wrapper>
-                </Main>
->>>>>>> parent of 82409cd (charts and parents done)
-=======
-                        {/* <StudentProfile /> */}
-                    </Wrapper>
-                </Main>
->>>>>>> parent of 82409cd (charts and parents done)
 
-            </Container>
-        </ThemeProvider >
+      </Container>
+    </ThemeProvider >
 
-    )
+  )
 }
 
 export default Teacher
