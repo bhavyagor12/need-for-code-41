@@ -29,7 +29,7 @@ import {
 import Parent from "./parent/pages/Parent";
 import { ThemeProvider } from "styled-components";
 import Student from "./student/pages/Student";
-// import Teacher from "./teacher/pages/Teacher";
+import Teacher from "./teacher/pages/Teacher";
 import StudentCalender from "./student/pages/StudentCalender";
 import Profile from "./parent/pages/Profile";
 import Signin from "./login/pages/Signin";
@@ -43,6 +43,7 @@ import TeacherProfile from "./teacher/pages/TeachersProfile";
 import TeacherCalender from "./teacher/pages/TeacherCalendar";
 import GradeAssignment from "./teacher/pages/GradeAssignments";
 import LandingPage from "./components/LandingPage";
+import Report from "./parent/pages/Report";
 // import SetAssign from "./teacher/pages/SetAssign";
 // import ParentRaiseQuery from "./parent/pages/ParentRaiseQuery";
 // import ParentReport from "./parent/pages/ParentReport";
@@ -74,6 +75,7 @@ function App() {
       <Route path="/teacher/calender" element={<TeacherCalender/>} />
       <Route path='/teacher/gradeassignments' element={<GradeAssignment />} />
       <Route path='/teacher/profile' element={<TeacherProfile />} />
+      <Route path='/parent/report' element={<Report />} />
       
 
       <Route path="/login" element={<Login/>} />

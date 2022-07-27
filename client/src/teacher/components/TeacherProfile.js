@@ -29,7 +29,7 @@ const TeacherProfile = () => {
                   </div>
 
                   <div className="square">
-                    COMPUTERS
+                    IT
                     <img src={needforcode} alt="computer" className="computer" />
                   </div>
                 </div>
