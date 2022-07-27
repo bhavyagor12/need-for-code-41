@@ -101,6 +101,9 @@ import {
     TablePagination,
     TableFooter
 } from '@material-ui/core';
+import axios from "axios";
+import { useSelector } from "react-redux";
+import { MdOtherHouses } from "react-icons/md";
 
 const useStyles = makeStyles((theme) => ({
     table: {
@@ -140,6 +143,8 @@ const useStyles = makeStyles((theme) => ({
 function Papaparsing() {
   // State to store parsed data
   const [parsedData, setParsedData] = useState([]);
+  const {user} = useSelector(state => state.user);
+  const {name,_id} = user;
 
   //State to store table Column name
   const [tableRows, setTableRows] = useState([]);
@@ -177,17 +182,104 @@ function Papaparsing() {
 
         // Parsed Data Response in array format
         setParsedData(results.data);
-        console.log(results.data);
-
-
         // Filtered Column Names
         setTableRows(rowsArray[0]);
-
         // Filtered Values
         setValues(valuesArray);
       },
     });
   };
+
+  const AddAssignments = (e) => {
+    // console.log(parsedData);
+    if(parsedData===0) throw new Error("No Data");
+    else{
+      // axios.post('http://localhost:8000/api/assignments/addassignments', {sapid: User?.sapid, )
+    }
+  }
+
+  const AddAttendance = (e) => {
+    var attendancearr=[];
+    if(parsedData===0) throw new Error("No Data");
+    else{
+      
+      parsedData.forEach(element => {
+        attendancearr=[];
+        attendancearr.push(parseInt(element.day1));
+        attendancearr.push(parseInt(element.day2));
+        attendancearr.push(parseInt(element.day3));
+        attendancearr.push(parseInt(element.day4));
+        attendancearr.push(parseInt(element.day5));
+        attendancearr.push(1);
+        // attendancearr.push(element.day6);
+        attendancearr.push(parseInt(1));
+        console.log(user._id.toString());
+        axios.post('http://localhost:8000/api/teams/addattendance', 
+        {
+          teamname: element.teamname,
+          sapid: "2",
+          teacherid: _id,
+          attendance: attendancearr
+        }).then("Successfully Added").catch(err => console.log(err));
+    })
+    }
+  }
+
+  const AddOfflineMarks = (e) => {
+    var assignmentid=[];
+    if(parsedData===0) throw new Error("No Data");
+    else{
+      parsedData.forEach(element => {
+        axios.post('http://localhost:8000/api/teams/addassignments', 
+        {
+          teacherid: _id,
+          teachername: "neharam",
+          teamname: element.teamname,
+          description: element.description,
+          typeofassignment: element.typeofassignment,
+          totalmarks: element.totalmarks
+        }).then("Successfully Added").catch(err => console.log(err));
+      })
+      axios.post('http://localhost:8000/api/teams/sendassignments',
+      {
+        teacherid: _id,
+        teamname: parsedData[0].teamname,
+      }).then("Successfully Added").catch(err => console.log(err));
+
+      
+    }
+  }
+
+  const MarkRandom = (e) => {
+     axios.post('http://localhost:8000/api/evaluation/gradeall',{
+        teacherid: _id,
+        teamname: parsedData[0].teamname,
+        userid: "2",
+        marksgiven: Math.floor(Math.random() * 10),
+        feedbackgiven: "random",
+     })
+  }
+
+
+  const AddUsers = (e) => {
+    if(parsedData===0) throw new Error("No Data");
+    else{
+      parsedData.forEach(row=>{
+        console.log(row.sapid)
+        
+      axios.post('http://localhost:8000/api/auth/signup', 
+      {
+        sapid: parseInt(row.sapid),
+        name: row.name,
+        email: row.email,
+        password: row.password,
+        yearofgraduation: row.yearofgraduation,
+        typeofuser: row.typeofuser 
+      })
+      }
+    )}
+
+    }
 
   return (
     <div className="App">
@@ -291,7 +383,13 @@ function Papaparsing() {
         onChange={changeHandler}
         accept=".csv"
         style={{ display: "block", margin: "10px auto" }}
-      />
+      />  
+                        <button className="m-2 p-5" onClick={(e)=>AddUsers(e)}>Enter into Users</button>      
+                        <button className='m-2 p-5' onClick={(e)=>AddAttendance(e)}>Enter into Attendance</button>
+                        {/* <button className='m-2 p-5' >Enter into Set Assignments</button> */}
+                        <button className='m-2 p-5' onClick={(e)=>AddOfflineMarks(e)}>Enter Offline Test Marks</button>
+                        <button className='m-2 p-5'>Enter to add students in Teams</button>
+
     </div>
   );
 }

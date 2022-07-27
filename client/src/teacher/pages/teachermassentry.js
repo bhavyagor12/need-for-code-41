@@ -1,3 +1,5 @@
+import logo from '../../images/needforcode.png';
+import Papaparsing from '../../Papaparsing.js'
 import React, { useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components';
 import Sidebar from '../components/teachersidebar'
@@ -21,22 +23,6 @@ justify-content: center;
 `;
 
 const Teacher = () => {
-<<<<<<< HEAD
-<<<<<<< HEAD
-  const [darkMode, setDarkMode] = useState(true);
-  return (
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <Container>
-        <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Main>
-          <Navbar />
-          <Wrapper>
-            {/* <StudentProfile /> */}
-          </Wrapper>
-        </Main>
-=======
-=======
->>>>>>> parent of 82409cd (charts and parents done)
     const [darkMode, setDarkMode] = useState(true);
     return (
         <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
@@ -44,17 +30,10 @@ const Teacher = () => {
                 <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
                 <Main>
                     <Navbar />
-                    <Wrapper>
-<<<<<<< HEAD
-                        <StudentProfile />
+                    <Wrapper className='flex flex-col'>
+                        <Papaparsing/>
                     </Wrapper>
                 </Main>
->>>>>>> refs/remotes/origin/main
-=======
-                        {/* <StudentProfile /> */}
-                    </Wrapper>
-                </Main>
->>>>>>> parent of 82409cd (charts and parents done)
 
             </Container>
         </ThemeProvider >

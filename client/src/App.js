@@ -39,10 +39,17 @@ import StudentTable from "./student/pages/StudentTable";
 import MassEntry from "./teacher/teachermassentry.js";
 import Papaparsing from "./Papaparsing";
 import SetAssign from "./teacher/pages/SetAssign";
-import Teacher from "./teacher/pages/TeachersProfile";
+import TeacherProfile from "./teacher/pages/TeachersProfile";
 import TeacherCalender from "./teacher/pages/TeacherCalendar";
 import GradeAssignment from "./teacher/pages/GradeAssignments";
 import LandingPage from "./components/LandingPage";
+import ParentRaiseQuery from "./parent/pages/ParentRaiseQuery";
+import ParentReport from "./parent/pages/ParentReport";
+import ParentFeedbacks from "./parent/pages/ParentFeedbacks";
+import ParentAppointment from "./parent/pages/ParentAppointment";
+// import StudentRaiseQuery from "./student/pages/StudentRaiseQuery";
+// import StudentTable from "./student/pages/StudentTable";
+// import MassEntry from "./teacher/pages/teachermassentry.js";
 
 function App() {
 
@@ -65,6 +72,7 @@ function App() {
       <Route path='/teacher/setassignments' element={<SetAssign />} />
       <Route path="/teacher/calender" element={<TeacherCalender/>} />
       <Route path='/teacher/gradeassignments' element={<GradeAssignment />} />
+      <Route path='/teacher/profile' element={<TeacherProfile />} />
       
 
       <Route path="/login" element={<Login/>} />
