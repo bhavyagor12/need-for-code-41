@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from '../../components/Navbar';
 import Login from '../../login/pages/Login';
 import StudentProfile from '../../parent/components/StudentProfile';
+import Appointment from '../../components/Appointment';
 const Container = styled.div`
   display: flex;
 `;
@@ -19,23 +20,21 @@ const Wrapper = styled.div`
 `;
 
 const Parent = () => {
-  const [darkMode, setDarkMode] = useState(true);
-  return (
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <Container>
+    const [darkMode, setDarkMode] = useState(true);
+    return (
+        <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+            <Container>
+                <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
+                <Main>
+                    <Navbar />
+                    <Wrapper>
+                        <Appointment />
+                    </Wrapper>
+                </Main>
 
-        <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Main>
-          <Navbar />
-
-          <Wrapper>
-            <StudentProfile />
-          </Wrapper>
-        </Main>
-
-      </Container>
-    </ThemeProvider >
-  )
+            </Container>
+        </ThemeProvider >
+    )
 }
 
 export default Parent

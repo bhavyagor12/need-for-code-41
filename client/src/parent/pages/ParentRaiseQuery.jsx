@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components';
 import Sidebar from '../components/Sidebar'
 import { darkTheme, lightTheme } from "../../utils/Theme";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from '../../components/Navbar';
-import Login from '../../login/pages/Login';
-import StudentProfile from '../../parent/components/StudentProfile';
+import RaiseQuery from "../../components/RaiseQuery";
 const Container = styled.div`
   display: flex;
 `;
@@ -16,10 +14,17 @@ const Main = styled.div`
 const Wrapper = styled.div`
   
   padding: 22px 96px;
+   
+  align-items: center;
+  justify-content: center;
+  place-items: center;
 `;
 
-const Parent = () => {
+
+// `;
+const ParentRaiseQuery = () => {
   const [darkMode, setDarkMode] = useState(true);
+
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Container>
@@ -29,7 +34,7 @@ const Parent = () => {
           <Navbar />
 
           <Wrapper>
-            <StudentProfile />
+            <RaiseQuery />
           </Wrapper>
         </Main>
 
@@ -38,4 +43,4 @@ const Parent = () => {
   )
 }
 
-export default Parent
+export default ParentRaiseQuery

@@ -21,22 +21,22 @@ justify-content: center;
 `;
 
 const Teacher = () => {
-    const [darkMode, setDarkMode] = useState(true);
-    return (
-        <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-            <Container>
-                <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
-                <Main>
-                    <Navbar />
-                    <Wrapper>
-                        {/* <StudentProfile /> */}
-                    </Wrapper>
-                </Main>
+  const [darkMode, setDarkMode] = useState(true);
+  return (
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <Container>
+        <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Main>
+          <Navbar />
+          <Wrapper>
+            {/* <StudentProfile /> */}
+          </Wrapper>
+        </Main>
 
-            </Container>
-        </ThemeProvider >
+      </Container>
+    </ThemeProvider >
 
-    )
+  )
 }
 
 export default Teacher
