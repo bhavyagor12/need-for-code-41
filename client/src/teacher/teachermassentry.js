@@ -8,7 +8,7 @@ import Papaparsing from '../Papaparsing.js'
 function teachermassentry() {
   return (
     <div>
-        {/* <TeacherSidebar/> */}
+        <TeacherSidebar/>
         <Papaparsing/>
 
     </div>

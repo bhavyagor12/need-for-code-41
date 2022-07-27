@@ -13,9 +13,13 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import { useDispatch } from 'react-redux';
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import { logout } from '../../redux/userSlice'
 =======
 import { logout } from "../../redux/userSlice";
+>>>>>>> Stashed changes
+=======
+import { logout } from '../../redux/userSlice'
 >>>>>>> Stashed changes
 
 const Container = styled.div`
