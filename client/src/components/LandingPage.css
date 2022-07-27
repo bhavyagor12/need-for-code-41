@@ -1,0 +1,36 @@
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #myBtn {
+    z-index: 1;
+    width: 200px;
+    height: 80px;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    background: white;
+    color: black;
+    cursor: pointer;
+  }
+  
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }

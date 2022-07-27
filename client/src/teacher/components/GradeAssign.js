@@ -1,7 +1,7 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {loginFailure,loginSuccess,loginStart} from '../../redux/userSlice';
 import { Navigate, useNavigate } from 'react-router-dom';
 
@@ -12,11 +12,11 @@ display: flex;
 flex-direction: column;
 background: linear-gradient(rgba(255, 255, 255, 0.1),
 rgba(255, 255, 255, 0.3)),
-url('https://img.freepik.com/free-vector/high-school-concept-illustration_114360-8279.jpg?w=2000');
+
 height: 100vh;
 align-items: center;
 justify-content: center;
-color: ${({theme}) => theme.text}
+color:black
 
 `;
 const Wrapper = styled.div `
@@ -45,7 +45,7 @@ border-radius:3px;
 background-color: transparent;
 padding:15px;
 outline:none;
-color: ${({theme}) => theme.text}
+color: black;
 `;
 
 const Button = styled.button`
@@ -58,55 +58,50 @@ background-color: ${({theme}) => theme.soft};
 color: ${({theme}) => theme.textSoft};
 `;
 
-const Signin = () => {
-  const navigate = useNavigate();
-  const [sapid,setSapid] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  
-  const dispatch = useDispatch();
 
-  const handleLogin = async (e) => {
+const SetAssignments = () => {
+  const navigate = useNavigate();
+    const [marksgiven,setMarksgiven] = useState("");
+  const[feedback,setFeedback] = useState("");
+  const { user } = useSelector(state => state.user);
+  const {assignmentid,sapid,_id} = user;
+
+  const handleClick =  (e) => {
     e.preventDefault();
-    dispatch(loginStart());
+    // dispatch(loginStart());
+
     try {
-      const res = await axios.post("/auth/signin", { sapid,email, password });
-      // console.log(res.data);
-      dispatch(loginSuccess(res.data));
-      if(res.data.typeofuser === "teacher"){
-        navigate("/teacher");
+      if(marksgiven && feedback){
+      const res = axios.post("/evaluation/grade", { assignmentid,sapid,_id,marksgiven,feedback });
+      console.log(res.data);
+      alert("Student Graded Successfully");
+      navigate("/teacher");}
+      // console.log(name);
+      // console.log(_id);
+      else{
+        alert("Please fill all the fields");
       }
-      if(res.data.typeofuser === "student"){
-       navigate('/student');
-      }
-      if(res.data.typeofuser === "parent"){
-        navigate('/parent');
-      }
+
+      
     } catch (err) {
-      dispatch(loginFailure());
+      console.log(err);
     }
   };
-
-
-
-
-
   return (
+    <div>
+        <Container>
     
-    <Container>
-    
-    <Wrapper><Title>Login</Title>
+    <Wrapper><Title>Set Assignment</Title>
     <SubTitle>WELCOME TO SterLearn </SubTitle>
-    <Input placeholder="sapid" onChange={e => setSapid(e.target.value)} />
-    <Input placeholder="email" onChange={e => setEmail(e.target.value)} />
-    <Input type="password" placeholder="password" onChange={e => setPassword(e.target.value)} />
-    <Button onClick={handleLogin}>Sign in</Button>
+    <Input placeholder="Total Marks" onChange={e => setMarksgiven(e.target.value)} className="text-black" />
+    <Input placeholder="Description" onChange={e => setFeedback(e.target.value)} />
+    <Button onClick={handleClick}>Set Assignment</Button>
    
     </Wrapper>
    
     </Container>
-    
+    </div>
   )
 }
 
-export default Signin
+export default SetAssignments

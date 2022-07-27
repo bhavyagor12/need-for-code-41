@@ -34,8 +34,15 @@ import StudentCalender from "./student/pages/StudentCalender";
 import Profile from "./parent/pages/Profile";
 import Signin from "./login/pages/Signin";
 import StudentTable from "./student/pages/StudentTable";
+// import Teacher from './teacher/teachersidebar'
 // import StudentTable from "./student/pages/StudentTable";
 import MassEntry from "./teacher/teachermassentry.js";
+import Papaparsing from "./Papaparsing";
+import SetAssign from "./teacher/pages/SetAssign";
+import Teacher from "./teacher/pages/TeachersProfile";
+import TeacherCalender from "./teacher/pages/TeacherCalendar";
+import GradeAssignment from "./teacher/pages/GradeAssignments";
+import LandingPage from "./components/LandingPage";
 
 function App() {
 
@@ -53,11 +60,18 @@ function App() {
       <Route path="/student/table" element={<StudentTable/>} />
       <Route path="/parent/profile" element={<Profile/>} />
       <Route path="/parent/raisequery" element={<RaiseQuery/>} />
+      <Route path="/papaparsing" element={<Papaparsing/>} />
+      <Route path='/teacher' element={<Teacher/>} />
+      <Route path='/teacher/setassignments' element={<SetAssign />} />
+      <Route path="/teacher/calender" element={<TeacherCalender/>} />
+      <Route path='/teacher/gradeassignments' element={<GradeAssignment />} />
       
 
       <Route path="/login" element={<Login/>} />
 
       <Route path="/teacher/massentry" element={<MassEntry/>} />
+
+      <Route path="/" element={<LandingPage/>} />
 
 
 
