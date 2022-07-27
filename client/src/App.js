@@ -36,6 +36,7 @@ import Signin from "./login/pages/Signin";
 import StudentTable from "./student/pages/StudentTable";
 // import StudentTable from "./student/pages/StudentTable";
 import MassEntry from "./teacher/teachermassentry.js";
+<<<<<<< HEAD
 import ParentRaiseQuery from "./parent/pages/ParentRaiseQuery";
 import ParentReport from "./parent/pages/ParentReport";
 import ParentFeedbacks from "./parent/pages/ParentFeedbacks";
@@ -43,6 +44,8 @@ import ParentAppointment from "./parent/pages/ParentAppointment";
 // import StudentRaiseQuery from "./student/pages/StudentRaiseQuery";
 // import StudentTable from "./student/pages/StudentTable";
 import MassEntry from "./teacher/pages/teachermassentry.js";
+=======
+>>>>>>> parent of 82409cd (charts and parents done)
 
 function App() {
 
