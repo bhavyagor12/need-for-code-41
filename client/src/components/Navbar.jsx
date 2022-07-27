@@ -30,6 +30,7 @@ const Search = styled.div`
   padding: 5px;
   border: 1px solid ${({ theme }) => theme.text};
   border-radius:3px;
+
 `;
 const Input = styled.input`
   border: none;

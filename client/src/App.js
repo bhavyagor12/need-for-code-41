@@ -36,7 +36,7 @@ import Signin from "./login/pages/Signin";
 import StudentTable from "./student/pages/StudentTable";
 // import Teacher from './teacher/teachersidebar'
 // import StudentTable from "./student/pages/StudentTable";
-import MassEntry from "./teacher/teachermassentry.js";
+// import MassEntry from "./teacher/teachermassentry.js";
 import Papaparsing from "./Papaparsing";
 import SetAssign from "./teacher/pages/SetAssign";
 import TeacherProfile from "./teacher/pages/TeachersProfile";
@@ -51,7 +51,7 @@ import Report from "./parent/pages/Report";
 // import ParentAppointment from "./parent/pages/ParentAppointment";
 // import StudentRaiseQuery from "./student/pages/StudentRaiseQuery";
 // import StudentTable from "./student/pages/StudentTable";
-// import MassEntry from "./teacher/pages/teachermassentry.js";
+import MassEntry from "./teacher/pages/teachermassentry.js";
 
 function App() {
 

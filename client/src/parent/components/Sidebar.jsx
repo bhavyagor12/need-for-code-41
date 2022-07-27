@@ -88,62 +88,62 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
     }
     return <Container>
         <Wrapper>
-            <Link to="/parent" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/student" style={{ textDecoration: "none", color: "inherit" }}>
                 <Logo >
                     <Img src={logo} />
                     Student Portal
                 </Logo>
             </Link>
-            <Link to="/parent" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/student" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <AiOutlineHome />
                     Profile
                 </Item>
             </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/parent/report" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <AiOutlineSearch />
                     Report
                 </Item>
             </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/parent/teams" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <AiOutlineTeam/>
                     Teams
                 </Item>
             </Link>
             <Hr/>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/parent/assignments" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <MdAssignment/>
                     Assignments
                 </Item>
             </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/parent/feedback" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <RiFeedbackFill/>
                     Feedback
                 </Item>
             </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/parent/queries" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                 <AiOutlineQuestionCircle/>
                     Queries
                 </Item>
             </Link>
             <Hr />
-            <Item >
+            <Link to="/parent/calender" style={{ textDecoration: "none", color: "inherit" }}>
                 <AiOutlineCalendar/>
                 Calender
-            </Item>
-            <Item>
+            </Link>
+            {/* <Item>
                 <MdOutlineVideoLibrary />
                 To do list
             </Item>
             <Item>
                 <MdOutlineVideoLibrary />
                 Appointment
-            </Item>
+            </Item> */}
     
             <Button onClick={logoutUser}>Log out</Button><Hr />
             <Item onClick={() => setDarkMode(!darkMode)}>

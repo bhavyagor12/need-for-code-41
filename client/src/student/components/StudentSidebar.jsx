@@ -101,38 +101,38 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
                     Profile
                 </Item>
             </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/parent/report" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <AiOutlineSearch />
                     Report
                 </Item>
             </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/parent/teams" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <AiOutlineTeam />
                     Teams
                 </Item>
             </Link>
             <Hr />
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/student/assignments" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <MdAssignment />
                     Assignments
                 </Item>
             </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/student/submitassignments" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <MdAssignment />
                     Submit Assignments
                 </Item>
             </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/student/feedback" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <RiFeedbackFill />
                     Feedback
                 </Item>
             </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/student/queries" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <AiOutlineQuestionCircle />
                     Queries
@@ -145,14 +145,14 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
                     Calender
                 </Item>
             </Link>
-            <Item>
+            {/* <Item>
                 <MdOutlineVideoLibrary />
                 To do list
             </Item>
             <Item>
                 <MdOutlineVideoLibrary />
                 Appointment
-            </Item>
+            </Item> */}
 
             <Button onClick={logoutUser}>Log out</Button><Hr />
             <Item onClick={() => setDarkMode(!darkMode)}>

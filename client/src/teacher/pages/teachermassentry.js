@@ -1,11 +1,9 @@
-import logo from '../../images/needforcode.png';
 import Papaparsing from '../../Papaparsing.js'
 import React, { useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components';
-import Sidebar from '../../components/teachersidebar'
+import Sidebar from '../components/teachersidebar';
 import { darkTheme, lightTheme } from "../../utils/Theme";
 import Navbar from '../../components/Navbar';
-import StudentProfile from '../../student/pages/StudentProfile';
 
 
 const Container = styled.div`
@@ -34,7 +32,6 @@ const Teacher = () => {
                         <Papaparsing/>
                     </Wrapper>
                 </Main>
-
             </Container>
         </ThemeProvider >
 
