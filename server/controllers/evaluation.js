@@ -37,5 +37,15 @@ export const gradeAssignment  = async (req, res, next) => {
     }
 }
 
+export const gradeallassignmentsrandomly = async (req, res, next) => {
+    try{
+        const assignments = await AssignmentStudent.find({assignmentid: req.body.assignmentid});
+        console.log(assignments);
+        res.send(assignments);
+        
+    }
+    catch{ throw new Error("Error!"); }
+}
+
 
 

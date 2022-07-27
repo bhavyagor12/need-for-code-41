@@ -79,10 +79,10 @@ export const addAttendance = async (req, res, next) => {
         req.body.attendance.forEach((e) => {
         element.attendance.push(e);
         })
-        res.send("Attendance added");
       }
     })
     team.save();
+    res.send("Attendance added");
   } catch (err) {
     next(createError(404, "Error!"));
   }
