@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../images/needforcode.png";
+import logo from "../../images/needforcode.png";
 import { AiOutlineCalendar,AiOutlineQuestionCircle,AiOutlineTeam,AiOutlineHome, AiOutlineSearch } from 'react-icons/ai';
 import { MdAssignment,MdSubscriptions, MdOutlineVideoLibrary, MdHistory, MdOutlineLibraryMusic, MdSportsSoccer, MdSportsEsports, MdOutlineLocalMovies, MdOutlineLiveTv, MdOutlineReport, MdHelpOutline, MdOutlineAccountCircle } from 'react-icons/md';
 import {TbEngine} from 'react-icons/tb';
@@ -12,7 +12,7 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { useDispatch } from 'react-redux';
-import { logout } from '../redux/userSlice'
+import { logout } from '../../redux/userSlice'
 
 const Container = styled.div`
   flex: 1;
@@ -88,63 +88,63 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
     }
     return <Container>
         <Wrapper>
-            <Link to="/parent" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/teacher" style={{ textDecoration: "none", color: "inherit" }}>
                 <Logo >
                     <Img src={logo} />
                     Teacher Portal
                 </Logo>
             </Link>
-            <Link to="/parent" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/teacher" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <AiOutlineHome />
                     Profile
                 </Item>
             </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/teacher/teams" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <AiOutlineTeam/>
                     Teams
                 </Item>
             </Link>
             <Hr/>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/teacher/addassignments" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <MdAssignment/>
                     Set Assignments
                 </Item>
             </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/teacher/gradeassignments" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <MdAssignment/>
                     Grade Assignments
                 </Item>
             </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/teacher/queries" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                 <AiOutlineQuestionCircle/>
                     Answer Queries
                 </Item>
             </Link>
             <Hr />
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/teacher/massentry" style={{ textDecoration: "none", color: "inherit" }}>
             <Item>
                 <TbEngine/>
                     Mass Entry
             </Item>
             </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/teacher/calender" style={{ textDecoration: "none", color: "inherit" }}>
             <Item >
                 <AiOutlineCalendar/>
                 Calender
             </Item>
             </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/teacher/todolist" style={{ textDecoration: "none", color: "inherit" }}>
             <Item>
                 <MdOutlineVideoLibrary />
                 To do list
             </Item>
             </Link>
-            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/teachers/appointment" style={{ textDecoration: "none", color: "inherit" }}>
             <Item>
                 <MdOutlineVideoLibrary />
                 Appointment
