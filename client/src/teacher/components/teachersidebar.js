@@ -12,14 +12,10 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { useDispatch } from 'react-redux';
-<<<<<<< Updated upstream
 import { logout } from "../../redux/userSlice";
 
 
 
-=======
-import { logout } from '../../redux/userSlice'
->>>>>>> Stashed changes
 
 const Container = styled.div`
   flex: 1;
@@ -95,11 +91,7 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
     }
     return <Container>
         <Wrapper>
-<<<<<<< Updated upstream
             <Link to="/teacher" style={{ textDecoration: "none", color: "inherit" }}>
-=======
-            <Link to="/teacher/profile" style={{ textDecoration: "none", color: "inherit" }}>
->>>>>>> Stashed changes
                 <Item >
                     <Img src={logo} />
                     Teacher Portal
@@ -155,11 +147,7 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
                 To do list
             </Item>
             </Link>
-<<<<<<< Updated upstream
             {/* <Link to="/teacher/appointments" style={{ textDecoration: "none", color: "inherit" }}>
-=======
-            {/* <Link to="/teachers/appointment" style={{ textDecoration: "none", color: "inherit" }}>
->>>>>>> Stashed changes
             <Item>
                 <MdOutlineVideoLibrary />
                 Appointment
