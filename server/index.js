@@ -7,7 +7,6 @@ import teamRoutes from "./routes/team.js";
 import evaluationRoutes from "./routes/evaluation.js";
 import getRoutes from "./routes/get.js";
 import queryRoutes from "./routes/query.js";
-import marksRoutes from "./routes/marks.js";
 import  cors  from "cors";
 const app = express();
 dotenv.config();
@@ -37,7 +36,6 @@ app.use("/api/teams", teamRoutes);
 app.use("/api/evaluation", evaluationRoutes);
 app.use('/api/query',queryRoutes)
 app.use("/api/get", getRoutes);
-app.use("/api/marks", marksRoutes);
 
 // error middleware
 app.use((err, req, res, next) => {
