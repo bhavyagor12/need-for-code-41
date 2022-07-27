@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from '../../components/Navbar';
 import Login from '../../login/pages/Login';
 import FormInput from '../../login/components/FormInput';
+import { Navigate, useNavigate } from 'react-router-dom';
 import './RaiseQuery.css';
 const Container = styled.div`
   display: flex;
@@ -29,6 +30,7 @@ const Wrapper = styled.div`
 // `;
 const RaiseQuery = () => {
   const [darkMode, setDarkMode] = useState(true);
+  const navigate = useNavigate();
 
   const [values, setValues] = useState({
     sapid: '',
@@ -82,6 +84,8 @@ const RaiseQuery = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    alert('Query Raised!We will get back to you soon')
+    navigate('/parent/profile');
   }
 
   const onChange = (e) => {

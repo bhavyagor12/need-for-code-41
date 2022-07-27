@@ -91,7 +91,7 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
             <Link to="/parent" style={{ textDecoration: "none", color: "inherit" }}>
                 <Logo >
                     <Img src={logo} />
-                    Parent Portal
+                    Student Portal
                 </Logo>
             </Link>
             <Link to="/parent" style={{ textDecoration: "none", color: "inherit" }}>
