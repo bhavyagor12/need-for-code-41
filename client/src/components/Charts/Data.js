@@ -2,31 +2,26 @@ export const UserData = [
     {
       id: 1,
       year: 2016,
-      userGain: 80000,
-      userLost: 823,
+      attendance: 63,
     },
     {
       id: 2,
       year: 2017,
-      userGain: 45677,
-      userLost: 345,
+      attendance: 76,
     },
     {
       id: 3,
       year: 2018,
-      userGain: 78888,
-      userLost: 555,
+      attendance: 85,
     },
     {
       id: 4,
       year: 2019,
-      userGain: 90000,
-      userLost: 4555,
+      attendance: 73
     },
     {
       id: 5,
       year: 2020,
-      userGain: 4300,
-      userLost: 234,
+      attendance: 95,
     },
   ];
