@@ -28,6 +28,7 @@ const ParentCalender = () => {
         <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
         <Main>
           <Navbar />
+
           <Wrapper>
             <Calender />
           </Wrapper>

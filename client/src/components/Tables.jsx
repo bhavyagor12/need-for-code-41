@@ -49,13 +49,15 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-let USERS = [], STATUSES = ['Positive', 'Average', 'Negative'];
+let USERS = [], STATUSES = ['Active', 'Pending', 'Blocked'];
 for (let i = 0; i < 14; i++) {
     USERS[i] = {
         name: faker.name.findName(),
         email: faker.internet.email(),
         phone: faker.phone.phoneNumber(),
-        feedbackDate: faker.date.past().toLocaleDateString('en-US'),
+        jobTitle: faker.name.jobTitle(),
+        company: faker.company.companyName(),
+        joinDate: faker.date.past().toLocaleDateString('en-US'),
         status: STATUSES[Math.floor(Math.random() * STATUSES.length)]
     }
 }
@@ -80,10 +82,10 @@ function Tables() {
             <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell className={classes.tableHeaderCell}>Teacher Name</TableCell>
-                        <TableCell className={classes.tableHeaderCell}>Feedback Date</TableCell>
-                        <TableCell className={classes.tableHeaderCell}>Feedback</TableCell>
-                        <TableCell className={classes.tableHeaderCell}>Contact</TableCell>
+                        <TableCell className={classes.tableHeaderCell}>User Info</TableCell>
+                        <TableCell className={classes.tableHeaderCell}>Job Info</TableCell>
+                        <TableCell className={classes.tableHeaderCell}>Joining Date</TableCell>
+                        <TableCell className={classes.tableHeaderCell}>Status</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -97,25 +99,25 @@ function Tables() {
                                     <Grid item lg={10}>
                                         <Typography className={classes.name}>{row.name}</Typography>
                                         <Typography color="textSecondary" variant="body2">{row.email}</Typography>
-
+                                        <Typography color="textSecondary" variant="body2">{row.phone}</Typography>
                                     </Grid>
                                 </Grid>
                             </TableCell>
-
-                            <TableCell>{row.feedbackDate}</TableCell>
+                            <TableCell>
+                                <Typography color="primary" variant="subtitle2">{row.jobTitle}</Typography>
+                                <Typography color="textSecondary" variant="body2">{row.company}</Typography>
+                            </TableCell>
+                            <TableCell>{row.joinDate}</TableCell>
                             <TableCell>
                                 <Typography
                                     className={classes.status}
                                     style={{
                                         backgroundColor:
-                                            ((row.status === 'Positive' && 'green') ||
-                                                (row.status === 'Average' && 'blue') ||
-                                                (row.status === 'Negative' && 'orange'))
+                                            ((row.status === 'Active' && 'green') ||
+                                                (row.status === 'Pending' && 'blue') ||
+                                                (row.status === 'Blocked' && 'orange'))
                                     }}
                                 >{row.status}</Typography>
-                            </TableCell>
-                            <TableCell>
-                                <Typography className={classes.number}>{row.phone}</Typography>
                             </TableCell>
                         </TableRow>
                     ))}

@@ -5,7 +5,6 @@ import { darkTheme, lightTheme } from "../../utils/Theme";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from '../../components/Navbar';
 import Login from '../../login/pages/Login';
-import StudentProfile from '../../parent/components/StudentProfile';
 const Container = styled.div`
   display: flex;
 `;
@@ -29,7 +28,7 @@ const Parent = () => {
           <Navbar />
 
           <Wrapper>
-            <StudentProfile />
+
           </Wrapper>
         </Main>
 

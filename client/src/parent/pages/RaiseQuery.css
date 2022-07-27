@@ -2,15 +2,21 @@ form {
   background-color: white;
   padding: 0px 60px;
   border-radius: 15px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  place-items: center;
+  flex-direction: column; */
   width: 40%;
 }
 
-.c1 {
+.app {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
   height: 100vh;
+
+
 }
 
 h1 {

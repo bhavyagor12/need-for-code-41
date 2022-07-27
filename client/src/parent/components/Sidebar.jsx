@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../../images/needforcode.png";
-import { AiOutlineCalendar, AiOutlineQuestionCircle, AiOutlineTeam, AiOutlineHome, AiOutlineSearch } from 'react-icons/ai';
-import { MdAssignment, MdSubscriptions, MdOutlineVideoLibrary, MdHistory, MdOutlineLibraryMusic, MdSportsSoccer, MdSportsEsports, MdOutlineLocalMovies, MdOutlineLiveTv, MdOutlineReport, MdHelpOutline, MdOutlineAccountCircle } from 'react-icons/md';
-import { TbEngine } from 'react-icons/tb';
-import { RiFeedbackFill } from 'react-icons/ri';
+import { AiOutlineCalendar,AiOutlineQuestionCircle,AiOutlineTeam,AiOutlineHome, AiOutlineSearch } from 'react-icons/ai';
+import { MdAssignment,MdSubscriptions, MdOutlineVideoLibrary, MdHistory, MdOutlineLibraryMusic, MdSportsSoccer, MdSportsEsports, MdOutlineLocalMovies, MdOutlineLiveTv, MdOutlineReport, MdHelpOutline, MdOutlineAccountCircle } from 'react-icons/md';
+import {TbEngine} from 'react-icons/tb';
+import { RiFeedbackFill} from 'react-icons/ri';
 import { IoMdSettings } from "react-icons/io"
 import { SiGooglenews } from 'react-icons/si';
 import { VscColorMode } from 'react-icons/vsc'
@@ -100,7 +100,7 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
                     Profile
                 </Item>
             </Link>
-            <Link to="/parent/report" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <AiOutlineSearch />
                     Report
@@ -108,37 +108,43 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
             </Link>
             <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
-                    <AiOutlineTeam />
+                    <AiOutlineTeam/>
                     Teams
                 </Item>
             </Link>
-            <Hr />
-            <Link to="/parent/feedback" style={{ textDecoration: "none", color: "inherit" }}>
+            <Hr/>
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
-                    <RiFeedbackFill />
+                    <MdAssignment/>
+                    Assignments
+                </Item>
+            </Link>
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+                <Item>
+                    <RiFeedbackFill/>
                     Feedback
                 </Item>
             </Link>
-            <Link to="/parent/raisequery" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
-                    <AiOutlineQuestionCircle />
+                <AiOutlineQuestionCircle/>
                     Queries
                 </Item>
             </Link>
             <Hr />
-            <Link to="/parent/calender" style={{ textDecoration: "none", color: "inherit" }}>
-                <Item >
-                    <AiOutlineCalendar />
-                    Calender
-                </Item>
-            </Link>
-            <Link to="/parent/appointment">
-                <Item>
-                    <MdOutlineVideoLibrary />
-                    Appointment
-                </Item>
-            </Link>
-
+            <Item >
+                <AiOutlineCalendar/>
+                Calender
+            </Item>
+            <Item>
+                <MdOutlineVideoLibrary />
+                To do list
+            </Item>
+            <Item>
+                <MdOutlineVideoLibrary />
+                Appointment
+            </Item>
+    
             <Button onClick={logoutUser}>Log out</Button><Hr />
             <Item onClick={() => setDarkMode(!darkMode)}>
                 <VscColorMode />

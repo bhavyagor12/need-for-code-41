@@ -73,13 +73,11 @@ const Signin = () => {
       const res = await axios.post("/auth/signin", { sapid,email, password });
       // console.log(res.data);
       dispatch(loginSuccess(res.data));
-     if(res.typeofuser === "teacher"){
-      navigate('/teacher');
-     }
+    //   if(res.typeofuser === "teacher"){}
       if(res.data.typeofuser === "student"){
        navigate('/student');
       }
-      if(res.data.typeofuser === "parent"){
+      if(res.data.typeofuser === "teacher"){
         navigate('/parent');
       }
     } catch (err) {

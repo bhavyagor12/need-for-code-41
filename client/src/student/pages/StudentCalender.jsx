@@ -26,9 +26,11 @@ const StudentCalender = () => {
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Container>
+
         <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
         <Main>
           <Navbar />
+
           <Wrapper>
             <Calender />
           </Wrapper>
