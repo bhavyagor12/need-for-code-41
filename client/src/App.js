@@ -27,6 +27,8 @@ import ParentReport from "./parent/pages/ParentReport";
 import ParentFeedbacks from "./parent/pages/ParentFeedbacks";
 import ParentAppointment from "./parent/pages/ParentAppointment";
 // import StudentRaiseQuery from "./student/pages/StudentRaiseQuery";
+// import StudentTable from "./student/pages/StudentTable";
+import MassEntry from "./teacher/pages/teachermassentry.js";
 
 function App() {
   return (
