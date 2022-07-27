@@ -29,7 +29,7 @@ import {
 import Parent from "./parent/pages/Parent";
 import { ThemeProvider } from "styled-components";
 import Student from "./student/pages/Student";
-import Teacher from "./teacher/pages/Teacher";
+// import Teacher from "./teacher/pages/Teacher";
 import StudentCalender from "./student/pages/StudentCalender";
 import Profile from "./parent/pages/Profile";
 import Signin from "./login/pages/Signin";

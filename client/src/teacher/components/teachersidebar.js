@@ -12,7 +12,11 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { useDispatch } from 'react-redux';
+<<<<<<< Updated upstream
 import { logout } from '../../redux/userSlice'
+=======
+import { logout } from "../../redux/userSlice";
+>>>>>>> Stashed changes
 
 const Container = styled.div`
   flex: 1;
@@ -89,10 +93,14 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
     return <Container>
         <Wrapper>
             <Link to="/teacher" style={{ textDecoration: "none", color: "inherit" }}>
+<<<<<<< Updated upstream
                 <Logo >
+=======
+                <Item >
+>>>>>>> Stashed changes
                     <Img src={logo} />
                     Teacher Portal
-                </Logo>
+                </Item>
             </Link>
             <Link to="/teacher" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
@@ -107,7 +115,11 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
                 </Item>
             </Link>
             <Hr/>
+<<<<<<< Updated upstream
             <Link to="/teacher/addassignments" style={{ textDecoration: "none", color: "inherit" }}>
+=======
+            <Link to="/teacher/setassignments" style={{ textDecoration: "none", color: "inherit" }}>
+>>>>>>> Stashed changes
                 <Item>
                     <MdAssignment/>
                     Set Assignments
@@ -144,12 +156,16 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
                 To do list
             </Item>
             </Link>
+<<<<<<< Updated upstream
             <Link to="/teachers/appointment" style={{ textDecoration: "none", color: "inherit" }}>
+=======
+            {/* <Link to="/teacher/appointments" style={{ textDecoration: "none", color: "inherit" }}>
+>>>>>>> Stashed changes
             <Item>
                 <MdOutlineVideoLibrary />
                 Appointment
             </Item>
-            </Link>
+            </Link> */}
     
             <Button onClick={logoutUser}>Log out</Button><Hr />
             <Item onClick={() => setDarkMode(!darkMode)}>

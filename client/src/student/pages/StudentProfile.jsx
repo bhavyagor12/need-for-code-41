@@ -5,27 +5,6 @@ import axios from 'axios'
 import { useSelector } from 'react-redux';
 
 const StudentProfile = () => {
-    // const handleLogin = async (e) => {
-    //     e.preventDefault();
-    //     dispatch(loginStart());
-    //     try {
-    //       const res = await axios.post("/auth/signin", { sapid,email, password });
-    //       console.log(res.data);
-    //       dispatch(loginSuccess(res.data));
-    //     //   if(res.typeofuser === "teacher"){}
-    //       if(res.data.typeofuser === "student"){
-    //         window.location.href = "http://localhost:3001/student";
-    //       }
-    //       if(res.data.typeofuser === "parent"){
-    //         window.location.href = "http://localhost:3001/parent";
-    //       }
-    
-    
-          
-    //     } catch (err) {
-    //       dispatch(loginFailure());
-    //     }
-    //   };
     const { user } = useSelector(state => state.user);
     
     
