@@ -1,3 +1,5 @@
+import logo from '../../images/needforcode.png';
+import Papaparsing from '../../Papaparsing.js'
 import React, { useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components';
 import Sidebar from '../components/teachersidebar'
@@ -28,8 +30,8 @@ const Teacher = () => {
                 <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
                 <Main>
                     <Navbar />
-                    <Wrapper>
-                        <StudentProfile />
+                    <Wrapper className='flex flex-col'>
+                        <Papaparsing/>
                     </Wrapper>
                 </Main>
 

@@ -35,7 +35,7 @@ import Profile from "./parent/pages/Profile";
 import Signin from "./login/pages/Signin";
 import StudentTable from "./student/pages/StudentTable";
 // import StudentTable from "./student/pages/StudentTable";
-import MassEntry from "./teacher/teachermassentry.js";
+import MassEntry from "./teacher/pages/teachermassentry.js";
 
 function App() {
 

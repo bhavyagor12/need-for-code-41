@@ -101,6 +101,8 @@ import {
     TablePagination,
     TableFooter
 } from '@material-ui/core';
+import axios from "axios";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
     table: {
@@ -140,6 +142,7 @@ const useStyles = makeStyles((theme) => ({
 function Papaparsing() {
   // State to store parsed data
   const [parsedData, setParsedData] = useState([]);
+  const {User} = useSelector(state => state.user);
 
   //State to store table Column name
   const [tableRows, setTableRows] = useState([]);
@@ -177,17 +180,40 @@ function Papaparsing() {
 
         // Parsed Data Response in array format
         setParsedData(results.data);
-        console.log(results.data);
-
-
         // Filtered Column Names
         setTableRows(rowsArray[0]);
-
         // Filtered Values
         setValues(valuesArray);
       },
     });
   };
+
+  const AddAssignments = (e) => {
+    // console.log(parsedData);
+    if(parsedData===0) throw new Error("No Data");
+    else{
+      // axios.post('http://localhost:8000/api/assignments/addassignments', {sapid: User?.sapid, )
+    }
+  }
+
+  const AddUsers = (e) => {
+    if(parsedData===0) throw new Error("No Data");
+    else{
+      parsedData.forEach(row=>{
+        console.log(row.sapid)
+        
+      axios.post('http://localhost:8000/api/auth/signup', 
+      {
+        sapid: parseInt(row.sapid),
+        name: row.name,
+        email: row.email,
+        password: row.password,
+        yearofgraduation: row.yearofgraduation,
+        typeofuser: row.typeofuser 
+      })
+      }
+    )}
+    }
 
   return (
     <div className="App">
@@ -291,7 +317,11 @@ function Papaparsing() {
         onChange={changeHandler}
         accept=".csv"
         style={{ display: "block", margin: "10px auto" }}
-      />
+      />  
+                        <button className="m-2 p-5" onClick={(e)=>AddUsers(e)}>Enter into Users</button>      
+                        <button className='m-2 p-5'>Enter into Attendance</button>
+                        <button className='m-2 p-5' onClick={(e)=>AddAssignments(e)}>Enter into Set Assignments</button>
+                        <button className='m-2 p-5'>Enter to add students in Teams</button>
     </div>
   );
 }

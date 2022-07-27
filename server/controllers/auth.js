@@ -7,6 +7,7 @@ import jwt from "jsonwebtoken";
 export const signup = async (req, res, next) => {
     try {
       const newUser = new User({ ...req.body});
+      console.log(newUser);
       await newUser.save();
       res.status(200).send("user has been created");
     } catch (err) {
