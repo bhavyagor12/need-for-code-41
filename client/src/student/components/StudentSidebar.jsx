@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../../images/needforcode.png";
-import { AiOutlineCalendar,AiOutlineQuestionCircle,AiOutlineTeam,AiOutlineHome, AiOutlineSearch } from 'react-icons/ai';
-import { MdAssignment,MdSubscriptions, MdOutlineVideoLibrary, MdHistory, MdOutlineLibraryMusic, MdSportsSoccer, MdSportsEsports, MdOutlineLocalMovies, MdOutlineLiveTv, MdOutlineReport, MdHelpOutline, MdOutlineAccountCircle } from 'react-icons/md';
-import {TbEngine} from 'react-icons/tb';
-import { RiFeedbackFill} from 'react-icons/ri';
+import { AiOutlineCalendar, AiOutlineQuestionCircle, AiOutlineTeam, AiOutlineHome, AiOutlineSearch } from 'react-icons/ai';
+import { MdAssignment, MdSubscriptions, MdOutlineVideoLibrary, MdHistory, MdOutlineLibraryMusic, MdSportsSoccer, MdSportsEsports, MdOutlineLocalMovies, MdOutlineLiveTv, MdOutlineReport, MdHelpOutline, MdOutlineAccountCircle } from 'react-icons/md';
+import { TbEngine } from 'react-icons/tb';
+import { RiFeedbackFill } from 'react-icons/ri';
 import { IoMdSettings } from "react-icons/io"
 import { SiGooglenews } from 'react-icons/si';
 import { VscColorMode } from 'react-icons/vsc'
@@ -19,9 +19,10 @@ const Container = styled.div`
   background-color:${({ theme }) => theme.bg};
   height: 100vh;
   color:${({ theme }) => theme.text};
-  font-size:20px;
+  font-size:14px;
   position: sticky;
   top: 0;
+  
 `;
 const Wrapper = styled.div`
   padding: 18px 26px;
@@ -88,13 +89,13 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
     }
     return <Container>
         <Wrapper>
-            <Link to="/parent" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/student" style={{ textDecoration: "none", color: "inherit" }}>
                 <Logo >
                     <Img src={logo} />
                     Student Portal
                 </Logo>
             </Link>
-            <Link to="/parent" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/student" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
                     <AiOutlineHome />
                     Profile
@@ -108,40 +109,42 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
             </Link>
             <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
-                    <AiOutlineTeam/>
+                    <AiOutlineTeam />
                     Teams
                 </Item>
             </Link>
-            <Hr/>
+            <Hr />
             <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
-                    <MdAssignment/>
+                    <MdAssignment />
                     Assignments
                 </Item>
             </Link>
             <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
-                    <MdAssignment/>
+                    <MdAssignment />
                     Submit Assignments
                 </Item>
             </Link>
             <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
-                    <RiFeedbackFill/>
+                    <RiFeedbackFill />
                     Feedback
                 </Item>
             </Link>
             <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
                 <Item>
-                <AiOutlineQuestionCircle/>
+                    <AiOutlineQuestionCircle />
                     Queries
                 </Item>
             </Link>
             <Hr />
-            <Item >
-                <AiOutlineCalendar/>
-                Calender
-            </Item>
+            <Link to="/student/calender" style={{ textDecoration: "none", color: "inherit" }}>
+                <Item >
+                    <AiOutlineCalendar />
+                    Calender
+                </Item>
+            </Link>
             <Item>
                 <MdOutlineVideoLibrary />
                 To do list
@@ -150,7 +153,7 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
                 <MdOutlineVideoLibrary />
                 Appointment
             </Item>
-    
+
             <Button onClick={logoutUser}>Log out</Button><Hr />
             <Item onClick={() => setDarkMode(!darkMode)}>
                 <VscColorMode />

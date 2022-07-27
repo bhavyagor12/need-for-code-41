@@ -93,7 +93,7 @@ const RaiseQuery = () => {
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <Container className="App">
+      <Container>
 
         <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
         <Main>
@@ -101,7 +101,7 @@ const RaiseQuery = () => {
 
           <Wrapper>
             {/* <Profilee> */}
-            <div className='app'>
+            <div className='flex align-center items-center justify-center mt-24'>
               <form onSubmit={handleSubmit}>
                 <h1>RAISE A QUERY</h1>
                 {inputs.map((input) => (

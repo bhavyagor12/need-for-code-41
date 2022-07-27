@@ -15,7 +15,7 @@ import {
     Logo,
     OpenLinksButton,
     NavbarLinkExtended,
-} from "../student/components/Navbar.style";
+} from "./Navbar.style";
 // import LogoImg from "../assets/logo.png";
 const Search = styled.div`
   position: absolute;

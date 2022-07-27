@@ -10,6 +10,8 @@ export const NavbarContainer = styled.nav`
   @media (min-width: 700px) {
     height: 80px;
   }
+  top:0;
+  position: sticky;
 `;
 
 export const LeftContainer = styled.div`
@@ -17,6 +19,7 @@ export const LeftContainer = styled.div`
   display: flex;
   align-items: center;
   padding-left: 5%;
+  color : ${({ theme }) => theme.text};
 `;
 
 export const RightContainer = styled.div`

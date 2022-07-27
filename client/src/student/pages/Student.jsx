@@ -24,8 +24,7 @@ const Student = () => {
   const [darkMode, setDarkMode] = useState(true);
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <Container className="App">
-
+      <Container>
         <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
         <Main>
           <Navbar />

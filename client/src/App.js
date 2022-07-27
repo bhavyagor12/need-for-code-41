@@ -29,6 +29,7 @@ import {
 import Parent from "./parent/pages/Parent";
 import { ThemeProvider } from "styled-components";
 import Student from "./student/pages/Student";
+import Teacher from "./teacher/pages/Teacher";
 import StudentCalender from "./student/pages/StudentCalender";
 import Profile from "./parent/pages/Profile";
 import Signin from "./login/pages/Signin";
@@ -48,6 +49,7 @@ function App() {
       <Route path="/parent/calender" element={<ParentCalender/>} />
       <Route path="/student/calender" element={<StudentCalender/>} />
       <Route path='/student' element={<Student />} />
+      <Route path='/teacher' element={<Teacher />} />
       <Route path="/student/table" element={<StudentTable/>} />
       <Route path="/parent/profile" element={<Profile/>} />
       <Route path="/parent/raisequery" element={<RaiseQuery/>} />
