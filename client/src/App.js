@@ -35,7 +35,7 @@ import Profile from "./parent/pages/Profile";
 import Signin from "./login/pages/Signin";
 import StudentTable from "./student/pages/StudentTable";
 // import StudentTable from "./student/pages/StudentTable";
-import Papaparsing from "./Papaparsing";
+import MassEntry from "./teacher/teachermassentry.js";
 
 function App() {
 
@@ -53,9 +53,11 @@ function App() {
       <Route path="/student/table" element={<StudentTable/>} />
       <Route path="/parent/profile" element={<Profile/>} />
       <Route path="/parent/raisequery" element={<RaiseQuery/>} />
-      <Route path="/papaparsing" element={<Papaparsing/>} />
+      
 
       <Route path="/login" element={<Login/>} />
+
+      <Route path="/teacher/massentry" element={<MassEntry/>} />
 
 
 

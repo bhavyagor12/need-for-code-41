@@ -104,12 +104,14 @@ import {
 
 const useStyles = makeStyles((theme) => ({
     table: {
-        minWidth: 800,
+        minWidth: 1200,
     },
     tableContainer: {
         borderRadius: 15,
-        margin: '10px 10px',
-        maxWidth: 950
+        maxWidth: 1200,
+        margin: 'auto',
+        marginTop: '2rem',
+        alignItems: 'center',
     },
     tableHeaderCell: {
         fontWeight: 'bold',
@@ -190,15 +192,8 @@ function Papaparsing() {
   return (
     <div className="App">
       {/* File Uploader */}
-      <input
-        type="file"
-        name="file"
-        onChange={changeHandler}
-        accept=".csv"
-        style={{ display: "block", margin: "10px auto" }}
-      />
-      <br />
-      <br />
+      
+      
       {/* Table */}
       {/* <table>
         <thead>
@@ -290,6 +285,13 @@ function Papaparsing() {
                 </TableFooter>
             </Table>
         </TableContainer>
+        <input
+        type="file"
+        name="file"
+        onChange={changeHandler}
+        accept=".csv"
+        style={{ display: "block", margin: "10px auto" }}
+      />
     </div>
   );
 }
